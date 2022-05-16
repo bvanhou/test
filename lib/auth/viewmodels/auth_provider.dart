@@ -86,7 +86,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
   Future submitLogin(BuildContext context,
       {required UserModel userModel, bool? forgotPassword}) async {
-    log(userModel.toMap().toString());
     final _result = await _mainCoreProvider.setUserToFirebase(userModel);
     await _result.fold(
       (failure) {
