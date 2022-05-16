@@ -48,6 +48,16 @@ abstract class Exceptions {
       return tr(NavigationService.context).pleaseTryAgainLater;
     } else if (e.code == 'auth/invalid-email' || e.code == 'invalid-password') {
       return tr(NavigationService.context).emailOrPasswordIsInCorrect;
+    } else if (e.code == 'weak-password') {
+      return tr(NavigationService.context).weakPassword;
+    } else if (e.code == 'requires-recent-login') {
+      return tr(NavigationService.context).reauthenticationRequired;
+    } else if (e.code == 'session-expired') {
+      return tr(NavigationService.context).codeExpired;
+    } else if (e.code == 'invalid-phone-number') {
+      return tr(NavigationService.context).invalidPhoneNumber;
+    } else if (e.code == 'too-many-requests') {
+      return tr(NavigationService.context).pleaseTryAgainLater;
     } else {
       return tr(NavigationService.context).pleaseTryAgainLater;
     }

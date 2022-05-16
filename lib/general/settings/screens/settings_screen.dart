@@ -1,5 +1,6 @@
 import 'package:deliverzler/core/screens/popup_page_nested.dart';
 import 'package:deliverzler/general/settings/components/logout_component.dart';
+import 'package:deliverzler/general/settings/components/user_edit_component.dart';
 import 'package:deliverzler/general/settings/components/user_info_component.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
@@ -27,6 +28,7 @@ class SettingsScreen extends StatelessWidget {
               SizedBox(
                 height: Sizes.vMarginMedium(context),
               ),
+              const UserEditComponent(),
               const LogoutComponent(),
             ],
           ),

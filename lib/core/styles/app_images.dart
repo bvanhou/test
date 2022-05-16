@@ -5,6 +5,9 @@ class AppImages {
   static const String welcomeImagesPath = 'assets/images/welcome/';
   static const String loginImagesPath = 'assets/images/login/';
   static const String coreImagesPath = 'assets/images/core/';
+  static const String coreBackgroundImagesPath =
+      'assets/images/core/backgrounds/';
+
   static const String dialogWidgetIconsPath =
       coreImagesPath + 'dialog_widget_icons/';
   static const String appIconsPath = 'assets/images/app_icons/';
@@ -20,6 +23,12 @@ class AppImages {
   static const String loginBackground =
       loginImagesPath + 'login_background.png';
   static const String hiHand = loginImagesPath + 'hi_hand.png';
+
+  /// Backgrounds
+  static const String starryNightBackground =
+      coreBackgroundImagesPath + 'starry_night.png';
+  static const String nightBackground = coreBackgroundImagesPath + 'night.png';
+  static const String moonBackground = coreBackgroundImagesPath + 'moon.png';
 
   /// Core
   static const String appLogoIcon = coreImagesPath + 'logo.png';

@@ -21,9 +21,9 @@ class UserInfoComponent extends ConsumerWidget {
             children: <Widget>[
               CustomText.h2(
                 context,
-                _userModel!.name!.isEmpty
+                _userModel!.username.isEmpty
                     ? 'User${_userModel.uId.substring(0, 6)}'
-                    : _userModel.name!,
+                    : _userModel.username,
                 weight: FontStyles.fontWeightBold,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

@@ -67,6 +67,17 @@ class AppSettingsSectionComponent extends ConsumerWidget {
             );
           },
         ),
+        CustomTileComponent(
+          title: tr(context).noInternetConnection,
+          leadingIcon: Icons.translate,
+          onTap: () {
+            NavigationService.push(
+              context,
+              isNamed: true,
+              page: RoutePaths.settingsLanguage,
+            );
+          },
+        ),
       ],
     );
   }

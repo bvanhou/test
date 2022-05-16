@@ -56,8 +56,8 @@ class LightTheme {
     ),
     inputDecorationTheme: const InputDecorationTheme(
       fillColor: AppColors.lightThemeTextFieldFillColor,
-      prefixIconColor: AppColors.lightThemeTextFieldBorderColor,
-      suffixIconColor: AppColors.lightThemeTextFieldBorderColor,
+      prefixIconColor: AppColors.lightThemeTextFieldTextColor,
+      suffixIconColor: AppColors.lightThemeTextFieldTextColor,
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.lightThemeTextFieldBorderColor,

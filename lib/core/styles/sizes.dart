@@ -45,6 +45,7 @@ class Sizes {
   static screenHPaddingDefault(BuildContext context) => 40.w(context);
   static screenVPaddingHigh(BuildContext context) => 80.h(context);
   static screenHPaddingMedium(BuildContext context) => 36.w(context);
+  static screenHPaddingSmall(BuildContext context) => 16.w(context);
 
   //Widgets Padding
   static vPaddingHighest(BuildContext context) => 40.h(context);
@@ -85,7 +86,10 @@ class Sizes {
   static roundedButtonMinWidth(BuildContext context) => 60.w(context);
   static roundedButtonDefaultHeight(BuildContext context) => 50.h(context);
   static roundedButtonDefaultWidth(BuildContext context) => 300.w(context);
-  static roundedButtonDefaultRadius(BuildContext context) => 26.r(context);
+  static roundedButtonDefaultMediumRadius(BuildContext context) =>
+      26.r(context);
+  static roundedButtonDefaultRadius(BuildContext context) => 10.r(context);
+
   static roundedButtonDialogHeight(BuildContext context) => 44.h(context);
   static roundedButtonDialogWidth(BuildContext context) => 240.w(context);
   static roundedButtonHighWidth(BuildContext context) => 260.w(context);
@@ -101,6 +105,8 @@ class Sizes {
   static textFieldHPaddingDefault(BuildContext context) => 16.w(context);
   static textFieldVPaddingDefault(BuildContext context) => 16.h(context);
   static cTextFieldVPaddingDefault(BuildContext context) => 12.h(context);
+  static cTextFieldVPaddingSmall(BuildContext context) => 6.h(context);
+
   static cTextFieldTitleWidthDefault(BuildContext context) => 148.w(context);
 
   //Cards
@@ -154,6 +160,7 @@ class Sizes {
   static mainDrawerHPadding(BuildContext context) => 30.w(context);
   static mainDrawerVPadding(BuildContext context) => 90.h(context);
   static appBarIconSize(BuildContext context) => 26.r(context);
+  static snackBarRadius(BuildContext context) => 20.r(context);
 
   ///Core
   static toastRadius(BuildContext context) => 20.r(context);
@@ -161,7 +168,7 @@ class Sizes {
   ///App Constants
   static screenTopShadowHeight(BuildContext context) => 400.h(context);
   static splashLogoSize(BuildContext context) => 220.r(context);
-  static loginLogoSize(BuildContext context) => 126.r(context);
+  static loginLogoSize(BuildContext context) => 250.r(context);
   static switchThemeButtonWidth(BuildContext context) => 44.w(context);
   static navBarIconRadius(BuildContext context) => 26.r(context);
   static cupertinoNavBarHeight(BuildContext context) => 58.h(context);

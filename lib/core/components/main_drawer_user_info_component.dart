@@ -24,9 +24,9 @@ class MainDrawerUserInfoComponent extends ConsumerWidget {
         ),
         CustomText.h3(
           context,
-          _userModel.name!.isEmpty
+          _userModel.username.isEmpty
               ? 'User${_userModel.uId.substring(0, 6)}'
-              : _userModel.name!,
+              : _userModel.username,
           weight: FontStyles.fontWeightMedium,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,

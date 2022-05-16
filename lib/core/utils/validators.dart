@@ -9,18 +9,19 @@ class Validators {
   String? validateMobileNumber(String? value) {
     Pattern patternMobileNumber =
         r'^(?:[+0]9)?[0-9|٩|٠|١|٢|٣|٤|٥|٦|٧|٨]{10,15}$';
-    value = value?.trim();
-    if (value!.isEmpty) {
+
+    String val = value!.trim();
+    if (val.isEmpty) {
       return tr(NavigationService.context).thisFieldIsEmpty;
-    } else if (value.contains("+") &&
-        value.contains(RegExp(r'[0-9]|٩|٠|١|٢|٣|٤|٥|٦|٧|٨')) &&
-        !value.contains(RegExp(r'[a-zA-Z]')) &&
-        !value.contains(RegExp(r'[ء-ي]'))) {
+    } else if (val.contains("+") &&
+        val.contains(RegExp(r'[0-9]|٩|٠|١|٢|٣|٤|٥|٦|٧|٨')) &&
+        !val.contains(RegExp(r'[a-zA-Z]')) &&
+        !val.contains(RegExp(r'[ء-ي]'))) {
       return tr(NavigationService.context).pleaseEnterValidNumber;
-    } else if (!value.contains(RegExp(r'[a-zA-Z]')) &&
-        value.contains(RegExp(r'[0-9]|٩|٠|١|٢|٣|٤|٥|٦|٧|٨')) &&
-        !value.contains("+") &&
-        !value.contains(RegExp(r'[ء-ي]'))) {
+    } else if (!val.contains(RegExp(r'[a-zA-Z]')) &&
+        val.contains(RegExp(r'[0-9]|٩|٠|١|٢|٣|٤|٥|٦|٧|٨')) &&
+        !val.contains("+") &&
+        !val.contains(RegExp(r'[ء-ي]'))) {
       if (!checkPattern(pattern: patternMobileNumber, value: value)) {
         return tr(NavigationService.context).pleaseEnterValidNumber;
       }
@@ -44,6 +45,22 @@ class Validators {
     } else {
       return null;
     }
+  }
+
+  String? validateUsername(String? value) {
+    String patternName =
+        r"^(?=.{2,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$";
+
+    if (value!.isEmpty) {
+      return tr(NavigationService.context).thisFieldIsEmpty;
+    } else if (value.toString().length < 3) {
+      return tr(NavigationService.context).nameMustBeAtLeast2Letters;
+    } else if (value.toString().length > 19) {
+      return tr(NavigationService.context).nameMustBeAtMost20Letters;
+    } else if (!checkPattern(pattern: patternName, value: value)) {
+      return tr(NavigationService.context).pleaseEnterValidUserName;
+    }
+    return null;
   }
 
   String? validateEmail(String? value) {

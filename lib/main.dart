@@ -1,11 +1,7 @@
-import 'package:deliverzler/core/hooks/platform_brightness_hook.dart';
 import 'package:deliverzler/core/routing/app_router.dart';
 import 'package:deliverzler/core/routing/navigation_service.dart';
-import 'package:deliverzler/core/services/theme_service.dart';
 import 'package:deliverzler/core/styles/app_themes/dark_theme.dart';
-import 'package:deliverzler/core/styles/app_themes/light_theme.dart';
 import 'package:deliverzler/core/viewmodels/app_locale_provider.dart';
-import 'package:deliverzler/core/viewmodels/app_theme_provider.dart';
 import 'package:deliverzler/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/services/init_services/services_initializer.dart';
@@ -32,22 +28,23 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final _platformBrightness = usePlatformBrightness();
+    // final _platformBrightness = usePlatformBrightness();
     final _appLocale = ref.watch(appLocaleProvider);
-    final _appTheme = ref.watch(appThemeProvider);
+    // final _appTheme = ref.watch(appThemeProvider);
 
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Theme(
-        data: ThemeService.instance.isDarkMode(_appTheme, _platformBrightness)
-            ? DarkTheme.darkTheme
-            : LightTheme.lightTheme,
+        // data: ThemeService.instance.isDarkMode(_appTheme, _platformBrightness)
+        //     ? DarkTheme.darkTheme
+        //     : LightTheme.lightTheme,
+        data: DarkTheme.darkTheme,
         child: PlatformApp(
           navigatorKey: NavigationService.navigationKey,
           debugShowCheckedModeBanner: false,
-          title: 'Deliverzler',
+          title: 'Beyond The Moon',
           color: AppColors.lightThemePrimary,
           locale: _appLocale,
           supportedLocales: L10n.all,

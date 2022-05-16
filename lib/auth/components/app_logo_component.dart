@@ -6,7 +6,9 @@ import 'package:deliverzler/core/widgets/custom_image.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
 
 class AppLogoComponent extends StatelessWidget {
-  const AppLogoComponent({Key? key}) : super(key: key);
+  final bool title;
+
+  const AppLogoComponent({Key? key, this.title = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +22,16 @@ class AppLogoComponent extends StatelessWidget {
           fit: BoxFit.cover,
           imageAndTitleAlignment: MainAxisAlignment.start,
         ),
-        SizedBox(
-          height: Sizes.vMarginSmallest(context),
-        ),
-        CustomText.h1(
-          context,
-          tr(context).appName,
-          alignment: Alignment.center,
-        ),
+        if (title)
+          SizedBox(
+            height: Sizes.vMarginSmallest(context),
+          ),
+        if (title)
+          CustomText.h1(
+            context,
+            tr(context).appName,
+            alignment: Alignment.center,
+          ),
       ],
     );
   }

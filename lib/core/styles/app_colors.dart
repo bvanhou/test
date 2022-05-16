@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   //Main
-  static const Color lightThemePrimary = Color(0xFFC11718);
-  static const Color darkThemePrimary = Color(0xFFC11718);
+  static const Color lightThemePrimary = Color(0xFF8154FF);
+  static const Color darkThemePrimary = Color(0xFF8154FF);
   static const Color accentColor = Color(0xFF4b98db);
+
+  static const Color primaryColor = Color(0xFFf0f0f0);
+  static const Color complimentaryColor = Color(0xFF54ff54);
+  static const Color tertiaryColor = Color(0xFFe25e90);
+  static const Color triadicBlue = Color(0xFFa2bfee);
 
   //Screen
   static const Color lightThemeStatusBarColor = Color(0xFFFAFAFA);
   static const Color darkThemeStatusBarColor = Color(0xFF303030);
   static const Color lightThemeScaffoldBGColor = Color(0xFFFAFAFA);
-  static const Color darkThemeScaffoldBGColor = Color(0xFF303030);
+  static const Color darkThemeScaffoldBGColor = Color(0xff13151E);
   static const Color lightThemeMajorBGColor = Color(0xffffffff);
   static const Color darkThemeMajorBGColor = Color(0xff212327);
 
@@ -31,14 +36,15 @@ class AppColors {
   static const Color darkThemeTextFieldHintColor = Color(0xff9b9b9b);
   static const Color lightThemeTextFieldCursorColor = Color(0xff000000);
   static const Color darkThemeTextFieldCursorColor = Color(0xfff44336);
-  static const Color lightThemeTextFieldValidationColor = Color(0xffff0000);
-  static const Color darkThemeTextFieldValidationColor = Color(0xffff0000);
+  static const Color lightThemeTextFieldValidationColor = Color(0xFF54ff54);
+  static const Color darkThemeTextFieldValidationColor = Color(0xFF54ff54);
   static const Color lightThemeTextFieldBorderColor = Colors.grey;
-  static const Color darkThemeTextFieldBorderColor = Colors.grey;
-  static const Color lightThemeTextFieldFocusedBorderColor = Color(0xFFC11718);
-  static const Color darkThemeTextFieldFocusedBorderColor = Color(0xFFC11718);
-  static const Color lightThemeTextFieldErrorBorderColor = Color(0xffff0000);
-  static const Color darkThemeTextFieldErrorBorderColor = Color(0xffff0000);
+  static const Color darkThemeTextFieldBorderColor = Color(0xff2A2C34);
+
+  static const Color lightThemeTextFieldFocusedBorderColor = Color(0xFF8154FF);
+  static const Color darkThemeTextFieldFocusedBorderColor = Color(0xFF8154FF);
+  static const Color lightThemeTextFieldErrorBorderColor = Color(0xFFe25e90);
+  static const Color darkThemeTextFieldErrorBorderColor = Color(0xFFe25e90);
 
   //Icon
   static const Color lightThemeIconColor = Color(0xff000000);
@@ -69,8 +75,28 @@ class AppColors {
   static const Color lightDark = Color(0x3c000000);
   static const Color carbonic = Color(0x1fffffff);
   static const Color toastColor = Color(0xFFC11718);
+
+  // static const LinearGradient primaryIngredientColor = LinearGradient(
+  //   colors: [Color(0xFFd74747), Color(0xFFC11718)],
+  //   stops: [0, 1],
+  // );
+
   static const LinearGradient primaryIngredientColor = LinearGradient(
+    colors: [Color(0xFF8154FF), Color(0xFF8154FF)],
+    stops: [0, 1],
+  );
+
+  static const LinearGradient primaryErrorIngredientColor = LinearGradient(
     colors: [Color(0xFFd74747), Color(0xFFC11718)],
+    stops: [0, 1],
+  );
+
+  static const LinearGradient primarySuccessIngredientColor = LinearGradient(
+    colors: [Color(0xFF52d64b), Color(0xFF52d64b)],
+    stops: [0, 1],
+  );
+  static const LinearGradient primaryDarkIngredientColor = LinearGradient(
+    colors: [Color(0xFF13151E), Color(0xFF13151E)],
     stops: [0, 1],
   );
 }

@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
   final Color? shadowColor;
   final Gradient? gradientColor;
   final BorderRadiusGeometry? gradientBorderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? padding;
   final VoidCallback? onLongPress;
 
@@ -39,6 +40,7 @@ class CustomButton extends StatelessWidget {
     this.shadowColor,
     this.gradientColor,
     this.gradientBorderRadius,
+    this.borderRadius,
     this.padding,
     this.onLongPress,
     Key? key,
@@ -82,9 +84,10 @@ class CustomButton extends StatelessWidget {
             padding: padding ?? EdgeInsets.zero,
             shape: shape ??
                 RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    Sizes.roundedButtonDefaultRadius(context),
-                  ),
+                  borderRadius: borderRadius ??
+                      BorderRadius.circular(
+                        Sizes.roundedButtonDefaultRadius(context),
+                      ),
                 ),
             primary: buttonColor,
             elevation: elevation ?? 0,

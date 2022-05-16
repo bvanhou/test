@@ -1,7 +1,9 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:deliverzler/auth/models/user_model.dart';
+import 'package:deliverzler/core/errors/exceptions.dart';
 import 'package:deliverzler/core/errors/failures.dart';
 import 'package:deliverzler/core/services/firebase_services/firebase_caller.dart';
 import 'package:deliverzler/core/services/firebase_services/firestore_paths.dart';
@@ -28,6 +30,25 @@ class UserRepo {
         }
       },
     );
+  }
+
+  Future<Either<Failure, UserModel>> getUserDataByEmailAddress(
+      String email) async {
+    return await _firebaseCaller.getCollectionData(
+        path: FirestorePaths.userCollection(),
+        queryBuilder: (query) => query.where('email', isEqualTo: email),
+        builder: (data) async {
+          if (data is! ServerFailure && data!.isNotEmpty) {
+            Map<String, dynamic> userData = data.first.data();
+            userModel = UserModel.fromMap(userData, data.first.id);
+            uid = userModel?.uId;
+            return Right(userModel!);
+          } else {
+            log("Email Not Found");
+            final _errorMessage = Exceptions.errorMessage("Email Not Found");
+            return Left(ServerFailure(message: _errorMessage));
+          }
+        });
   }
 
   Future<Either<Failure, bool>> setUserData(UserModel userData) async {

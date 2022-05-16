@@ -2,7 +2,7 @@ import 'package:deliverzler/core/services/platform_service.dart';
 import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/core/widgets/custom_text_field.dart';
+import 'package:deliverzler/core/widgets/custom_text_field_platform.dart';
 import 'package:flutter/material.dart';
 
 class TitledTextFieldItem extends StatelessWidget {
@@ -40,7 +40,7 @@ class TitledTextFieldItem extends StatelessWidget {
                 EdgeInsetsDirectional.only(start: Sizes.hPaddingTiny(context)),
             margin: EdgeInsets.only(bottom: Sizes.vPaddingSmallest(context)),
           ),
-        CustomTextField(
+        CustomTextFieldPlatform(
           context,
           controller: controller,
           validator: validator,

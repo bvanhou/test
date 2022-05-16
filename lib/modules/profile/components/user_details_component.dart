@@ -18,9 +18,9 @@ class UserDetailsComponent extends ConsumerWidget {
       children: [
         CustomText.h3(
           context,
-          _userModel.name!.isEmpty
+          _userModel.username.isEmpty
               ? 'User${_userModel.uId.substring(0, 6)}'
-              : _userModel.name!,
+              : _userModel.username,
           weight: FontStyles.fontWeightBold,
           alignment: Alignment.center,
         ),

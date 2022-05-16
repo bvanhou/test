@@ -1,8 +1,9 @@
+import 'package:deliverzler/auth/components/app_form_header_component.dart';
+import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/auth/components/app_logo_component.dart';
-import 'package:deliverzler/auth/components/login_form_component.dart';
-import 'package:deliverzler/auth/components/welcome_component.dart';
+import 'package:deliverzler/auth/components/login/login_form_component.dart';
 import 'package:deliverzler/core/screens/popup_page.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 
@@ -19,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                AppImages.loginBackground,
+                AppImages.starryNightBackground,
               ),
               fit: BoxFit.fill,
             ),
@@ -35,7 +36,10 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: Sizes.vMarginHigh(context),
               ),
-              const WelcomeComponent(),
+              AppFormHeaderComponent(
+                title: tr(context).logIn,
+                subTitle: tr(context).welcomeBack,
+              ),
               SizedBox(
                 height: Sizes.vMarginHigh(context),
               ),

@@ -7,7 +7,7 @@ import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
 import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MapPhoneCallComponent extends ConsumerWidget {
   const MapPhoneCallComponent({Key? key}) : super(key: key);
@@ -33,8 +33,8 @@ class MapPhoneCallComponent extends ConsumerWidget {
               elevation: 2,
               onPressed: () async {
                 final _phone = 'tel:$selectedOrderPhone';
-                if (await canLaunch(_phone)) {
-                  await launch(_phone);
+                if (await canLaunchUrlString(_phone)) {
+                  await launchUrlString(_phone);
                 } else {
                   AppDialogs.showErrorDialog(NavigationService.context);
                 }

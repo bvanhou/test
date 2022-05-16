@@ -16,6 +16,8 @@ class CustomTextField extends Container {
     Color? fillColor,
     Color? hintTextColor,
     double? borderRadiusSize,
+    InputBorder? focusedBorder,
+    InputBorder? errorBorder,
     String? hintText,
     Widget? suffixIcon,
     Color? textColor,
@@ -35,7 +37,7 @@ class CustomTextField extends Container {
     ValueChanged<String>? onFieldSubmitted,
     bool obscureText = false,
     FocusNode? focusNode,
-    // InputDecoration? inputDecoration,
+    BoxDecoration? decoration,
     EdgeInsetsGeometry? padding,
     EdgeInsetsGeometry? margin,
     bool autoFocus = false,
@@ -154,26 +156,28 @@ class CustomTextField extends Container {
                                 .enabledBorder!
                                 .borderSide,
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                  Sizes.textFieldDefaultRadius(context)),
-                            ),
-                            borderSide: Theme.of(context)
-                                .inputDecorationTheme
-                                .focusedBorder!
-                                .borderSide,
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                  Sizes.textFieldDefaultRadius(context)),
-                            ),
-                            borderSide: Theme.of(context)
-                                .inputDecorationTheme
-                                .errorBorder!
-                                .borderSide,
-                          ),
+                          focusedBorder: focusedBorder ??
+                              OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                      Sizes.textFieldDefaultRadius(context)),
+                                ),
+                                borderSide: Theme.of(context)
+                                    .inputDecorationTheme
+                                    .focusedBorder!
+                                    .borderSide,
+                              ),
+                          errorBorder: errorBorder ??
+                              OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                      Sizes.textFieldDefaultRadius(context)),
+                                ),
+                                borderSide: Theme.of(context)
+                                    .inputDecorationTheme
+                                    .errorBorder!
+                                    .borderSide,
+                              ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(
@@ -205,8 +209,8 @@ class CustomTextField extends Container {
                         ),
                         padding: contentPadding ??
                             EdgeInsetsDirectional.only(
-                              top: Sizes.cTextFieldVPaddingDefault(context),
-                              bottom: Sizes.cTextFieldVPaddingDefault(context),
+                              top: Sizes.cTextFieldVPaddingSmall(context),
+                              bottom: Sizes.cTextFieldVPaddingSmall(context),
                               end: suffixIcon != null
                                   ? Sizes.hPaddingHighest(context)
                                   : 0.0,
@@ -223,9 +227,10 @@ class CustomTextField extends Container {
                       child: suffixIcon is Icon
                           ? Icon(
                               suffixIcon.icon,
-                              color: Theme.of(context)
-                                  .inputDecorationTheme
-                                  .suffixIconColor,
+                              color: suffixIcon.color ??
+                                  Theme.of(context)
+                                      .inputDecorationTheme
+                                      .suffixIconColor,
                               semanticLabel: suffixIcon.semanticLabel,
                             )
                           : suffixIcon,

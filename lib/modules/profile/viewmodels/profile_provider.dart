@@ -6,6 +6,7 @@ import 'package:deliverzler/core/utils/dialogs.dart';
 import 'package:deliverzler/modules/profile/viewmodels/profile_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 final profileProvider =
     StateNotifierProvider.autoDispose<ProfileNotifier, ProfileState>((ref) {
@@ -22,27 +23,28 @@ class ProfileNotifier extends StateNotifier<ProfileState> {
 
   Future updateProfile(
     BuildContext context, {
-    required String name,
-    required String mobile,
+    required String username,
+    required PhoneNumber mobile,
   }) async {
     state = const ProfileState.loading();
-    final _result = await _userRepo.updateUserData(
-      _userRepo.userModel!.copyWith(
-        name: name,
-        phone: mobile,
-      ),
-    );
-    await _result.fold(
-      (failure) {
-        AppDialogs.showErrorDialog(context, message: failure.message);
-        state = ProfileState.error(errorText: failure.message);
-      },
-      (isSet) async {
-        if (isSet) {
-          state = const ProfileState.available();
-        }
-      },
-    );
+    // PhoneNumberModel _mobile = PhoneNumberModel.fromMap({});
+    // final _result = await _userRepo.updateUserData(
+    //   _userRepo.userModel!.copyWith(
+    //     username: username,
+    //     phone: mobile,
+    //   ),
+    // );
+    // await _result.fold(
+    //   (failure) {
+    //     AppDialogs.showErrorDialog(context, message: failure.message);
+    //     state = ProfileState.error(errorText: failure.message);
+    //   },
+    //   (isSet) async {
+    //     if (isSet) {
+    //       state = const ProfileState.available();
+    //     }
+    //   },
+    // );
   }
 
   Future updateProfileImage(

@@ -15,7 +15,7 @@ class DarkTheme {
     primaryColor: AppColors.darkThemeMajorBGColor,
     scaffoldBackgroundColor: AppColors.darkThemeScaffoldBGColor,
     colorScheme: const ColorScheme.dark().copyWith(
-      primary: AppColors.darkThemePrimary,
+      primary: AppColors.darkThemeIconColor,
       secondary: AppColors.accentColor,
     ),
     iconTheme: const IconThemeData(color: AppColors.darkThemeIconColor),
@@ -52,8 +52,8 @@ class DarkTheme {
     ),
     inputDecorationTheme: const InputDecorationTheme(
       fillColor: AppColors.darkThemeTextFieldFillColor,
-      prefixIconColor: AppColors.darkThemeTextFieldBorderColor,
-      suffixIconColor: AppColors.darkThemeTextFieldBorderColor,
+      prefixIconColor: AppColors.darkThemeTextFieldTextColor,
+      suffixIconColor: AppColors.darkThemeTextFieldTextColor,
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.darkThemeTextFieldBorderColor,
@@ -61,7 +61,7 @@ class DarkTheme {
       ),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: AppColors.darkThemeTextFieldBorderColor,
+          color: AppColors.darkThemeTextFieldValidationColor,
         ),
       ),
       focusedBorder: OutlineInputBorder(

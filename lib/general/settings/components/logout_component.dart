@@ -32,11 +32,10 @@ class LogoutComponent extends ConsumerWidget {
   }
 }
 
-
 class _SharedItemComponent extends StatelessWidget {
   const _SharedItemComponent({
-        Key? key,
-      }) : super(key: key);
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class _SharedItemComponent extends StatelessWidget {
         vertical: Sizes.vPaddingSmall(context),
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: AppColors.lightThemePrimary,
         borderRadius: BorderRadius.circular(
           Sizes.dialogSmallRadius(context),
         ),
@@ -66,7 +65,7 @@ class _SharedItemComponent extends StatelessWidget {
         children: [
           const Icon(
             Icons.logout,
-            color: AppColors.lightThemePrimary,
+            color: AppColors.darkThemeNormalTextColor,
           ),
           SizedBox(
             width: Sizes.hMarginSmall(context),
@@ -76,7 +75,7 @@ class _SharedItemComponent extends StatelessWidget {
             tr(context).logOut,
             alignment: Alignment.center,
             weight: FontStyles.fontWeightExtraBold,
-            color: AppColors.lightThemePrimary,
+            color: AppColors.darkThemeNormalTextColor,
           ),
         ],
       ),
