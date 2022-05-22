@@ -4,7 +4,7 @@ import 'package:deliverzler/modules/map/viewmodels/current_location_providers/cu
 import 'package:deliverzler/modules/map/viewmodels/current_location_providers/current_loc_marker_provider/current_loc_marker_state.dart';
 import 'package:deliverzler/modules/map/viewmodels/map_overlays_providers/map_circles_provider.dart';
 import 'package:deliverzler/modules/map/viewmodels/map_overlays_providers/map_markers_provider.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final currentLocMarkerProvider = StateNotifierProvider.autoDispose<
     CurrentLocMarkerNotifier,

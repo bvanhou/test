@@ -48,13 +48,6 @@ class LoginFormComponent extends HookConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               CustomTextButton(
-                child: CustomText.h5(
-                  context,
-                  tr(context).forgotPassword,
-                  color: AppColors.accentColor,
-                  weight: FontStyles.fontWeightSemiBold,
-                  alignment: Alignment.center,
-                ),
                 elevation: 1,
                 minWidth: Sizes.textButtonMinWidth(context),
                 minHeight: Sizes.textButtonMinHeight(context),
@@ -70,6 +63,13 @@ class LoginFormComponent extends HookConsumerWidget {
                     page: RoutePaths.authForgotPassword,
                   );
                 },
+                child: CustomText.h5(
+                  context,
+                  tr(context).forgotPassword,
+                  color: AppColors.accentColor,
+                  weight: FontStyles.fontWeightSemiBold,
+                  alignment: Alignment.center,
+                ),
               ),
             ],
           ),
@@ -129,13 +129,6 @@ class LoginFormComponent extends HookConsumerWidget {
                 width: Sizes.hMarginSmall(context),
               ),
               CustomTextButton(
-                child: CustomText.h5(
-                  context,
-                  tr(context).signUp,
-                  color: AppColors.accentColor,
-                  weight: FontStyles.fontWeightSemiBold,
-                  alignment: Alignment.center,
-                ),
                 elevation: 1,
                 minWidth: Sizes.textButtonMinWidth(context),
                 minHeight: Sizes.textButtonMinHeight(context),
@@ -151,6 +144,13 @@ class LoginFormComponent extends HookConsumerWidget {
                     page: RoutePaths.authRegistration,
                   );
                 },
+                child: CustomText.h5(
+                  context,
+                  tr(context).signUp,
+                  color: AppColors.accentColor,
+                  weight: FontStyles.fontWeightSemiBold,
+                  alignment: Alignment.center,
+                ),
               ),
             ],
           ),

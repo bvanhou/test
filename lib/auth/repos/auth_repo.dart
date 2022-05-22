@@ -6,7 +6,7 @@ import 'package:deliverzler/core/errors/exceptions.dart';
 import 'package:deliverzler/core/errors/failures.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 final authRepoProvider = Provider<AuthRepo>((ref) => AuthRepo());
@@ -45,6 +45,7 @@ class AuthRepo {
       return Right(UserModel.fromUserCredential(userCredential.user!));
     } on FirebaseAuthException catch (e) {
       log(e.toString());
+      log("Testing verification flow");
       final _errorMessage = Exceptions.firebaseAuthErrorMessage(e);
       return Left(ServerFailure(message: _errorMessage));
     } catch (e) {
@@ -115,10 +116,14 @@ class AuthRepo {
     required String otp,
   }) async {
     try {
+      log("Updating user phone number");
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
           verificationId: _verificationId!, smsCode: otp);
       final _result = await FirebaseAuth.instance.currentUser!
-          .updatePhoneNumber(credential);
+          .updatePhoneNumber(credential)
+          .catchError(
+              // ignore: return_of_invalid_type_from_catch_error
+              (onError) => {print(onError.toString())});
       return Right(_result);
     } on FirebaseAuthException catch (e) {
       final _errorMessage = Exceptions.firebaseAuthErrorMessage(e);

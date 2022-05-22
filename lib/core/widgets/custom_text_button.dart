@@ -40,13 +40,6 @@ class CustomTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformTextButton(
-      child: child ??
-          CustomText.h5(
-            context,
-            text!,
-            color: AppColors.lightThemePrimary,
-            alignment: Alignment.center,
-          ),
       onPressed: onPressed,
       color: buttonColor,
       //Not necessary if you added height and width.
@@ -73,8 +66,8 @@ class CustomTextButton extends StatelessWidget {
         return CupertinoTextButtonData(
           borderRadius: shape != null
               ? (shape as RoundedRectangleBorder)
-              .borderRadius
-              .resolve(Directionality.maybeOf(context))
+                  .borderRadius
+                  .resolve(Directionality.maybeOf(context))
               : null,
           padding: padding ??
               EdgeInsets.symmetric(
@@ -84,6 +77,13 @@ class CustomTextButton extends StatelessWidget {
           minSize: minHeight,
         );
       },
+      child: child ??
+          CustomText.h5(
+            context,
+            text!,
+            color: AppColors.lightThemePrimary,
+            alignment: Alignment.center,
+          ),
     );
   }
 }

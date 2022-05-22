@@ -2,7 +2,7 @@ import 'package:deliverzler/modules/home/components/card_details_button_componen
 import 'package:deliverzler/modules/home/components/card_user_details_component.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/modules/home/components/card_button_component.dart';

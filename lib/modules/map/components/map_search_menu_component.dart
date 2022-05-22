@@ -1,6 +1,6 @@
 import 'package:deliverzler/modules/map/viewmodels/map_search_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/modules/map/widgets/map_search_menu_item.dart';
 

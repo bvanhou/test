@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/services/init_services/storage_service.dart';
 import 'package:deliverzler/core/utils/storage_keys.dart';
 

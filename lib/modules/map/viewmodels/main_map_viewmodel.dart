@@ -5,7 +5,7 @@ import 'package:deliverzler/modules/map/viewmodels/map_location_change_viewmodel
 import 'package:deliverzler/modules/map/viewmodels/map_overlays_providers/map_markers_bounds_provider.dart';
 import 'package:deliverzler/modules/map/viewmodels/selected_place_providers/selected_place_directions_provider.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:deliverzler/modules/map/services/map_service.dart';
 

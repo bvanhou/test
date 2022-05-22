@@ -41,7 +41,7 @@ class UpcomingOrdersComponent extends ConsumerWidget {
       },
       error: (err, stack) => CustomText.h4(
         context,
-        tr(context).somethingWentWrong + '\n' + tr(context).pleaseTryAgainLater,
+        '${tr(context).somethingWentWrong}\n${tr(context).pleaseTryAgainLater}',
         color: AppColors.grey,
         alignment: Alignment.center,
         textAlign: TextAlign.center,

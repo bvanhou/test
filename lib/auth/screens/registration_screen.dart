@@ -6,7 +6,7 @@ import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/app_images.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class RegistrationScreen extends ConsumerWidget {
   const RegistrationScreen({Key? key}) : super(key: key);

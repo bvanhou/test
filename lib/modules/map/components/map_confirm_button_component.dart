@@ -1,6 +1,6 @@
 import 'package:deliverzler/modules/map/viewmodels/map_state_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
@@ -24,13 +24,6 @@ class MapConfirmButtonComponent extends ConsumerWidget {
             bottom: Sizes.mapConfirmButtonBottom(context),
             left: Sizes.mapConfirmButtonLeft(context),
             child: CustomButton(
-              child: CustomText.h4(
-                context,
-                tr(context).confirm,
-                color: AppColors.white,
-                weight: FontStyles.fontWeightMedium,
-                alignment: Alignment.center,
-              ),
               height: Sizes.roundedButtonDefaultHeight(context),
               width: Sizes.roundedButtonHighWidth(context),
               buttonColor: AppColors.lightThemePrimary,
@@ -45,6 +38,13 @@ class MapConfirmButtonComponent extends ConsumerWidget {
                   NavigationService.goBack(context);
                 }
               },
+              child: CustomText.h4(
+                context,
+                tr(context).confirm,
+                color: AppColors.white,
+                weight: FontStyles.fontWeightMedium,
+                alignment: Alignment.center,
+              ),
             ),
           )
         : const SizedBox();

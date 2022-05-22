@@ -50,26 +50,6 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformElevatedButton(
-      child: Container(
-        height: height ?? Sizes.roundedButtonDefaultHeight(context),
-        width: width ?? Sizes.roundedButtonDefaultWidth(context),
-        decoration: buttonColor == null
-            ? BoxDecoration(
-                borderRadius: gradientBorderRadius ??
-                    BorderRadius.circular(
-                        Sizes.roundedButtonDefaultRadius(context)),
-                gradient: gradientColor ?? AppColors.primaryIngredientColor,
-              )
-            : null,
-        child: child ??
-            CustomText.h4(
-              context,
-              text!,
-              color: buttonColor == null ? const Color(0xffffffff) : null,
-              weight: FontStyles.fontWeightMedium,
-              alignment: Alignment.center,
-            ),
-      ),
       onPressed: onPressed,
       color: buttonColor,
       //Not necessary if you added height and width.
@@ -110,6 +90,26 @@ class CustomButton extends StatelessWidget {
                 ),
         );
       },
+      child: Container(
+        height: height ?? Sizes.roundedButtonDefaultHeight(context),
+        width: width ?? Sizes.roundedButtonDefaultWidth(context),
+        decoration: buttonColor == null
+            ? BoxDecoration(
+                borderRadius: gradientBorderRadius ??
+                    BorderRadius.circular(
+                        Sizes.roundedButtonDefaultRadius(context)),
+                gradient: gradientColor ?? AppColors.primaryIngredientColor,
+              )
+            : null,
+        child: child ??
+            CustomText.h4(
+              context,
+              text!,
+              color: buttonColor == null ? const Color(0xffffffff) : null,
+              weight: FontStyles.fontWeightMedium,
+              alignment: Alignment.center,
+            ),
+      ),
     );
   }
 }

@@ -23,7 +23,7 @@ class RegistrationTextFieldsSection extends StatelessWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
   final bool usernameExists;
-  final borderState decorationState;
+  final BorderState decorationState;
   final Function(String)? onFieldSubmitted;
 
   @override
@@ -44,7 +44,7 @@ class RegistrationTextFieldsSection extends StatelessWidget {
                 decoration:
                     CupertinoCustomTheme.cupertinoFormSectionReactiveDecoration(
                         context,
-                        hasFocus ? borderState.focused : borderState.base),
+                        hasFocus ? BorderState.focused : BorderState.base),
                 backgroundColor: Colors.transparent,
                 margin: EdgeInsets.zero,
                 children: [
@@ -66,30 +66,30 @@ class RegistrationTextFieldsSection extends StatelessWidget {
               final FocusNode focusNode = Focus.of(context);
               final bool hasFocus = focusNode.hasFocus;
               bool? hadFocus;
-              borderState state = decorationState;
+              BorderState state = decorationState;
               Icon suffixIcon = Icon(PlatformIcons(context).accountCircle);
 
               if (hadFocus != null && hadFocus) {
-                state = decorationState != borderState.base
+                state = decorationState != BorderState.base
                     ? decorationState
-                    : borderState.focused;
+                    : BorderState.focused;
                 hadFocus = true;
               }
 
               if (usernameController.text.isEmpty && hasFocus) {
                 if (hasFocus) {
-                  state = borderState.focused;
+                  state = BorderState.focused;
                 } else {
-                  state = borderState.base;
+                  state = BorderState.base;
                 }
               }
 
               switch (state) {
-                case borderState.valid:
+                case BorderState.valid:
                   suffixIcon = Icon(PlatformIcons(context).checkMarkCircled,
                       color: AppColors.darkThemeTextFieldValidationColor);
                   break;
-                case borderState.error:
+                case BorderState.error:
                   suffixIcon = Icon(PlatformIcons(context).error,
                       color: AppColors.darkThemeTextFieldErrorBorderColor);
                   break;
@@ -127,7 +127,7 @@ class RegistrationTextFieldsSection extends StatelessWidget {
                 decoration:
                     CupertinoCustomTheme.cupertinoFormSectionReactiveDecoration(
                         context,
-                        hasFocus ? borderState.focused : borderState.base),
+                        hasFocus ? BorderState.focused : BorderState.base),
                 backgroundColor: Colors.transparent,
                 margin: EdgeInsets.zero,
                 children: [

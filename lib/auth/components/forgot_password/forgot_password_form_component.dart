@@ -75,13 +75,6 @@ class ForgotPasswordFormComponent extends HookConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomTextButton(
-                child: CustomText.h5(
-                  context,
-                  tr(context).cancel,
-                  color: AppColors.accentColor,
-                  weight: FontStyles.fontWeightSemiBold,
-                  alignment: Alignment.center,
-                ),
                 elevation: 1,
                 minWidth: Sizes.textButtonMinWidth(context),
                 minHeight: Sizes.textButtonMinHeight(context),
@@ -97,6 +90,13 @@ class ForgotPasswordFormComponent extends HookConsumerWidget {
                     page: RoutePaths.authLogin,
                   );
                 },
+                child: CustomText.h5(
+                  context,
+                  tr(context).cancel,
+                  color: AppColors.accentColor,
+                  weight: FontStyles.fontWeightSemiBold,
+                  alignment: Alignment.center,
+                ),
               ),
             ],
           ),

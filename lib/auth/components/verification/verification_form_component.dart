@@ -60,7 +60,7 @@ class VerificationFormComponent extends HookConsumerWidget {
                       onPressed: () {
                         if (_verificationFormKey.currentState!.validate()) {
                           PhoneNumber mobile =
-                              ref.read(mobileProvider.notifier).state;
+                              ref.watch(mobileProvider) as PhoneNumber;
                           ref
                               .watch(authProvider.notifier)
                               .verifyByPhoneNumber(context, mobile: mobile);

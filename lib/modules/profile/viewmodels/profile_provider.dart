@@ -5,7 +5,7 @@ import 'package:deliverzler/core/services/image_selector.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
 import 'package:deliverzler/modules/profile/viewmodels/profile_state.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 final profileProvider =

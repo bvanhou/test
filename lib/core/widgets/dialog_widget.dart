@@ -37,7 +37,6 @@ class DialogWidget {
             child: CustomDialog(
               context,
               contentPadding: contentPadding,
-              child: child,
               buttonText2: textButton2,
               onPressed2: onPressed2 ??
                   () {
@@ -47,8 +46,8 @@ class DialogWidget {
               image: image ?? dialogMessageData[dialogWidgetState]['icon'],
               buttonText: textButton,
               footer: footer,
-              onPressed: onPressed??
-                      () {
+              onPressed: onPressed ??
+                  () {
                     NavigationService.goBack(context);
                   },
               description: description,
@@ -57,6 +56,7 @@ class DialogWidget {
                   borderRadius: BorderRadius.circular(
                 Sizes.dialogRadius(context),
               )),
+              child: child,
             ),
           ),
         ),

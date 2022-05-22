@@ -34,9 +34,8 @@ class SelectedPlaceDirectionsNotifier
     final _geoPoint = _selectedOrderGeoPointProvider.state;
     if (_geoPoint == null) {
       Toasts.showBackgroundToast(
-        message: tr(NavigationService.context).pleaseSearchForLocation +
-            '\n' +
-            tr(NavigationService.context).userHasNotProvidedLocation,
+        message:
+            '${tr(NavigationService.context).pleaseSearchForLocation}\n${tr(NavigationService.context).userHasNotProvidedLocation}',
       );
     } else {
       await addSelectedPlaceToMap();

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:deliverzler/core/utils/constants.dart';
 import 'package:geolocator/geolocator.dart';
+// ignore: implementation_imports
 import 'package:geolocator_android/src/types/foreground_settings.dart';
 import 'package:location/location.dart' as loc;
 

@@ -2,7 +2,7 @@ import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/utils/validators.dart';
 import 'package:deliverzler/modules/map/viewmodels/map_state_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
@@ -25,10 +25,6 @@ class MapPhoneCallComponent extends ConsumerWidget {
             right: Sizes.hPaddingMedium(context),
             child: FloatingActionButton(
               heroTag: const Text('fab2'),
-              child: const Icon(
-                Icons.phone,
-                color: AppColors.white,
-              ),
               backgroundColor: AppColors.lightThemePrimary,
               elevation: 2,
               onPressed: () async {
@@ -39,6 +35,10 @@ class MapPhoneCallComponent extends ConsumerWidget {
                   AppDialogs.showErrorDialog(NavigationService.context);
                 }
               },
+              child: const Icon(
+                Icons.phone,
+                color: AppColors.white,
+              ),
             ),
           )
         : const SizedBox();

@@ -37,9 +37,9 @@ class UsernameChecker extends StateNotifier<bool> {
 final usernameCheckerProvier =
     StateNotifierProvider((ref) => UsernameChecker());
 
-class DecorationState extends StateNotifier<borderState> {
-  DecorationState() : super(borderState.base);
-  set value(borderState index) => state = index;
+class DecorationState extends StateNotifier<BorderState> {
+  DecorationState() : super(BorderState.base);
+  set value(BorderState index) => state = index;
 }
 
 final decorationStateProvider =
@@ -56,7 +56,7 @@ class RegistrationFormComponent extends HookConsumerWidget {
     final _usernameController = useTextEditingController(text: '');
 
     final _usernameExists = ref.watch(usernameCheckerProvier) as bool;
-    final _decorationState = ref.watch(decorationStateProvider) as borderState;
+    final _decorationState = ref.watch(decorationStateProvider) as BorderState;
     final _agreeToTermsAndConditions =
         ref.watch(agreeToTermsAndConditionProvider) as bool;
 
@@ -65,7 +65,7 @@ class RegistrationFormComponent extends HookConsumerWidget {
     _usernameController.addListener(() async {
       if (_debounce?.isActive ?? false) _debounce!.cancel();
 
-      ref.read(decorationStateProvider.notifier).value = borderState.focused;
+      ref.read(decorationStateProvider.notifier).value = BorderState.focused;
       _debounce = Timer(const Duration(milliseconds: 500), () async {
         // do something with query
         if (_usernameController.value.text.isNotEmpty) {
@@ -74,7 +74,7 @@ class RegistrationFormComponent extends HookConsumerWidget {
               .checkUsernameExists(_usernameController.value.text);
           ref.read(usernameCheckerProvier.notifier).value = exists;
           ref.read(decorationStateProvider.notifier).value =
-              !exists ? borderState.valid : borderState.error;
+              !exists ? BorderState.valid : BorderState.error;
         }
       });
     });
@@ -141,13 +141,6 @@ class RegistrationFormComponent extends HookConsumerWidget {
                 maxLines: 2,
               ),
               CustomTextButton(
-                child: CustomText.h5(
-                  context,
-                  tr(context).termsAndConditions,
-                  color: AppColors.accentColor,
-                  alignment: Alignment.center,
-                  weight: FontStyles.fontWeightMedium,
-                ),
                 padding: EdgeInsets.only(
                   left: Sizes.hPaddingTiny(context),
                 ),
@@ -173,6 +166,13 @@ class RegistrationFormComponent extends HookConsumerWidget {
                   //   },
                   // );
                 },
+                child: CustomText.h5(
+                  context,
+                  tr(context).termsAndConditions,
+                  color: AppColors.accentColor,
+                  alignment: Alignment.center,
+                  weight: FontStyles.fontWeightMedium,
+                ),
               )
             ],
           ),
@@ -217,13 +217,6 @@ class RegistrationFormComponent extends HookConsumerWidget {
             height: Sizes.vMarginSmall(context),
           ),
           CustomTextButton(
-            child: CustomText.h5(
-              context,
-              tr(context).cancel,
-              color: AppColors.accentColor,
-              weight: FontStyles.fontWeightSemiBold,
-              alignment: Alignment.center,
-            ),
             elevation: 1,
             minWidth: Sizes.textButtonMinWidth(context),
             minHeight: Sizes.textButtonMinHeight(context),
@@ -236,6 +229,13 @@ class RegistrationFormComponent extends HookConsumerWidget {
                 page: RoutePaths.authLogin,
               );
             },
+            child: CustomText.h5(
+              context,
+              tr(context).cancel,
+              color: AppColors.accentColor,
+              weight: FontStyles.fontWeightSemiBold,
+              alignment: Alignment.center,
+            ),
           )
         ],
       ),

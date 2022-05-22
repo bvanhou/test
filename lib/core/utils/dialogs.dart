@@ -10,9 +10,8 @@ class AppDialogs {
       context: context,
       dialogWidgetState: DialogWidgetState.error,
       title: tr(context).oops,
-      description: tr(context).somethingWentWrong +
-          '\n' +
-          (message ?? tr(context).pleaseTryAgainLater),
+      description:
+          '${tr(context).somethingWentWrong}\n${message ?? tr(context).pleaseTryAgainLater}',
       textButton: tr(context).oK,
       onPressed: () {
         NavigationService.goBack(context);

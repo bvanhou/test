@@ -9,7 +9,7 @@ import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
 import 'package:deliverzler/core/widgets/custom_text_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ResetPasswordScreen extends ConsumerWidget {
   const ResetPasswordScreen({Key? key}) : super(key: key);
@@ -44,13 +44,6 @@ class ResetPasswordScreen extends ConsumerWidget {
               ),
               // const ResetPasswordFormComponent(),
               CustomTextButton(
-                child: CustomText.h4(
-                  context,
-                  tr(context).signUp,
-                  color: AppColors.accentColor,
-                  weight: FontStyles.fontWeightSemiBold,
-                  alignment: Alignment.center,
-                ),
                 elevation: 1,
                 minWidth: Sizes.textButtonMinWidth(context),
                 minHeight: Sizes.textButtonMinHeight(context),
@@ -66,6 +59,13 @@ class ResetPasswordScreen extends ConsumerWidget {
                     page: RoutePaths.authRegistration,
                   );
                 },
+                child: CustomText.h4(
+                  context,
+                  tr(context).signUp,
+                  color: AppColors.accentColor,
+                  weight: FontStyles.fontWeightSemiBold,
+                  alignment: Alignment.center,
+                ),
               ),
             ],
           ),

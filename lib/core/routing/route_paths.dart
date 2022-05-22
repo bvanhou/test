@@ -11,15 +11,15 @@ class RoutePaths {
   static const authMembershipApplication = '/auth/membershipApplication';
 
   static const home = '/home';
-  static const map = home + '/map';
+  static const map = '$home/map';
   //HomeMainNestedRoutes
   static const homeMain = 'home_main';
   //ProfileNestedRoutes
   static const profile = 'profile';
   //SettingsNestedRoutes
   static const settings = 'settings';
-  static const settingsLanguage = settings + '/language';
-  static const settingsProfile = settings + '/profile';
+  static const settingsLanguage = '$settings/language';
+  static const settingsProfile = '$settings/profile';
   //CommunityNestedRoutes
   static const communityMain = '/community/main';
   static const communityBoard = '/community/main/board';

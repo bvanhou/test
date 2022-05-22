@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/modules/map/viewmodels/main_map_viewmodel.dart';
@@ -18,13 +18,13 @@ class MapFloatingActionButton extends ConsumerWidget {
       ),
       child: FloatingActionButton(
         heroTag: const Text('fab1'),
+        backgroundColor: AppColors.blue,
+        elevation: 2,
+        onPressed: ref.watch(mainMapViewModel.notifier).handleFABonPressed,
         child: const Icon(
           Icons.center_focus_strong,
           color: AppColors.white,
         ),
-        backgroundColor: AppColors.blue,
-        elevation: 2,
-        onPressed: ref.watch(mainMapViewModel.notifier).handleFABonPressed,
       ),
     );
   }

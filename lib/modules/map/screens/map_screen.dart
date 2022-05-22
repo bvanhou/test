@@ -6,7 +6,7 @@ import 'package:deliverzler/modules/home/viewmodels/location_service_provider/lo
 import 'package:deliverzler/modules/map/viewmodels/current_location_providers/current_loc_marker_provider/current_loc_marker_provider.dart';
 import 'package:deliverzler/modules/map/viewmodels/main_map_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/widgets/loading_indicators.dart';
 import 'package:deliverzler/modules/map/components/google_map_component.dart';
 import 'package:deliverzler/modules/map/components/map_confirm_button_component.dart';

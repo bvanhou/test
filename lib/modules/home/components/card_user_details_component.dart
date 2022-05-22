@@ -41,11 +41,7 @@ class CardUserDetailsComponent extends StatelessWidget {
               ),
               CustomText.h6(
                 context,
-                orderModel.addressModel!.state +
-                    ', ' +
-                    orderModel.addressModel!.city +
-                    ', ' +
-                    orderModel.addressModel!.street,
+                '${orderModel.addressModel!.state}, ${orderModel.addressModel!.city}, ${orderModel.addressModel!.street}',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

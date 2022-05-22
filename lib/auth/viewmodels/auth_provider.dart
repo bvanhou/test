@@ -13,7 +13,7 @@ import 'package:deliverzler/core/utils/dialogs.dart';
 import 'package:deliverzler/core/viewmodels/main_core_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -125,10 +125,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
     PhoneNumber _number = await PhoneNumber.getRegionInfoFromPhoneNumber(
         mobile.phoneNumber!, mobile.isoCode!);
     final _result = await _authRepo.verificationByPhoneNumber(
-        mobile: _number,
-        timeout: const Duration(
-          seconds: 120,
-        ));
+        mobile: _number, timeout: const Duration(minutes: 20));
     await _result.fold(
       (failure) {
         state = AuthState.error(errorText: failure.message);
@@ -154,7 +151,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
       {required String otp, required bool hasForgotPassword}) async {
     if (_userRepo.userModel != null) {
       log("Verification Flow - Verified User - Signing into account");
-      final _result = await _authRepo.signInWithVerificationCode(otp: otp);
+      final _result = await _authRepo.updatePhoneNumber(otp: otp);
       await _result.fold(
         (failure) {
           state = AuthState.error(errorText: failure.message);

@@ -121,15 +121,15 @@ class MapService {
       placeDirectionsModel.distance,
     );
     final _duration = placeDirectionsModel.duration;
-    return _distance + ', ' + _duration;
+    return '$_distance, $_duration';
   }
 
   String convertMeterToDistanceString(int distance) {
     if (distance < 1000) {
-      return distance.toString() + ' m';
+      return '$distance m';
     } else {
       double _distanceInKM = (distance / 1000);
-      return _distanceInKM.toStringAsFixed(2) + ' km';
+      return '${_distanceInKM.toStringAsFixed(2)} km';
     }
   }
 }

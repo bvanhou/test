@@ -22,6 +22,10 @@ class CardButtonComponent extends StatelessWidget {
     return CustomOutlinedButton(
       height: Sizes.roundedButtonMediumHeight(context),
       width: Sizes.roundedButtonMediumWidth(context),
+      side: isColored ? null : const BorderSide(color: AppColors.grey),
+      buttonColor: isColored ? null : Colors.transparent,
+      splashColor: isColored ? null : AppColors.lightThemePrimary,
+      onPressed: onPressed,
       child: CustomText.h5(
         context,
         title,
@@ -31,10 +35,6 @@ class CardButtonComponent extends StatelessWidget {
         weight: FontStyles.fontWeightBold,
         alignment: Alignment.center,
       ),
-      side: isColored ? null : const BorderSide(color: AppColors.grey),
-      buttonColor: isColored ? null : Colors.transparent,
-      splashColor: isColored ? null : AppColors.lightThemePrimary,
-      onPressed: onPressed,
     );
   }
 }

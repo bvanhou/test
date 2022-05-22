@@ -27,10 +27,7 @@ abstract class Exceptions {
         case 404:
           return 'Request page not found';
         default:
-          return 'Cannot connect to server' +
-              (server ??
-                  e.toString().substring(
-                      0, e.toString().length < 30 ? e.toString().length : 30));
+          return 'Cannot connect to server${server ?? e.toString().substring(0, e.toString().length < 30 ? e.toString().length : 30)}';
       }
     } else {
       return e

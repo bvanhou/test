@@ -1,7 +1,7 @@
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:flutter/material.dart';
 
-enum borderState { valid, focused, error, base }
+enum BorderState { valid, focused, error, base }
 
 class CupertinoCustomTheme {
   static BoxDecoration cupertinoFormSectionDecoration(BuildContext context) =>
@@ -19,10 +19,10 @@ class CupertinoCustomTheme {
       );
 
   static BoxDecoration cupertinoFormSectionReactiveDecoration(
-      BuildContext context, borderState state) {
+      BuildContext context, BorderState state) {
     BoxDecoration? decoration;
     switch (state) {
-      case borderState.valid:
+      case BorderState.valid:
         decoration = BoxDecoration(
             color: Theme.of(context).inputDecorationTheme.fillColor,
             borderRadius: BorderRadius.all(
@@ -38,7 +38,7 @@ class CupertinoCustomTheme {
                   .color,
             ));
         break;
-      case borderState.focused:
+      case BorderState.focused:
         decoration = BoxDecoration(
             color: Theme.of(context).inputDecorationTheme.fillColor,
             borderRadius: BorderRadius.all(
@@ -54,7 +54,7 @@ class CupertinoCustomTheme {
                   .color,
             ));
         break;
-      case borderState.error:
+      case BorderState.error:
         decoration = BoxDecoration(
             color: Theme.of(context).inputDecorationTheme.fillColor,
             borderRadius: BorderRadius.all(

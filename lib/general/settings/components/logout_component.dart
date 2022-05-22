@@ -6,7 +6,7 @@ import 'package:deliverzler/core/widgets/custom_text.dart';
 import 'package:deliverzler/general/settings/viewmodels/settings_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class LogoutComponent extends ConsumerWidget {
   const LogoutComponent({Key? key}) : super(key: key);

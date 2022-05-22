@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:deliverzler/core/components/image_pick_component.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/cached_network_image_circular.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class UserImageComponent extends ConsumerWidget {
   const UserImageComponent({Key? key}) : super(key: key);

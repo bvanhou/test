@@ -32,7 +32,7 @@ class CancelOrderDialog extends HookWidget {
           children: [
             CustomText.h4(
               context,
-              tr(context).reasonForCancelingTheOrder + ':',
+              '${tr(context).reasonForCancelingTheOrder}:',
             ),
             SizedBox(
               height: Sizes.vMarginSmallest(context),
@@ -48,6 +48,12 @@ class CancelOrderDialog extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomButton(
+                    buttonColor: AppColors.grey,
+                    height: Sizes.roundedButtonDialogHeight(context),
+                    width: Sizes.roundedButtonSmallWidth(context),
+                    onPressed: () {
+                      NavigationService.goBack(context);
+                    },
                     child: CustomText.h4(
                       context,
                       tr(context).cancel,
@@ -55,12 +61,6 @@ class CancelOrderDialog extends HookWidget {
                       weight: FontStyles.fontWeightMedium,
                       alignment: Alignment.center,
                     ),
-                    buttonColor: AppColors.grey,
-                    height: Sizes.roundedButtonDialogHeight(context),
-                    width: Sizes.roundedButtonSmallWidth(context),
-                    onPressed: () {
-                      NavigationService.goBack(context);
-                    },
                   ),
                   CustomButton(
                     text: tr(context).confirm,

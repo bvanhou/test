@@ -72,13 +72,6 @@ class OneTimePasswordFormComponent extends HookConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomTextButton(
-                child: CustomText.h5(
-                  context,
-                  tr(context).resend,
-                  color: AppColors.accentColor,
-                  weight: FontStyles.fontWeightSemiBold,
-                  alignment: Alignment.center,
-                ),
                 elevation: 1,
                 minWidth: Sizes.textButtonMinWidth(context),
                 minHeight: Sizes.textButtonMinHeight(context),
@@ -92,6 +85,13 @@ class OneTimePasswordFormComponent extends HookConsumerWidget {
                   ref.watch(authProvider.notifier).verifyByPhoneNumber(context,
                       mobile: phoneNumber, resend: true);
                 },
+                child: CustomText.h5(
+                  context,
+                  tr(context).resend,
+                  color: AppColors.accentColor,
+                  weight: FontStyles.fontWeightSemiBold,
+                  alignment: Alignment.center,
+                ),
               ),
             ],
           ),

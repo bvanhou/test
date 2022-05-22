@@ -46,7 +46,7 @@ class OrderDetailsDialog extends StatelessWidget {
                       children: [
                         CustomText.h4(
                           context,
-                          tr(context).orderDetails + ':',
+                          '${tr(context).orderDetails}:',
                           underline: true,
                           weight: FontStyles.fontWeightSemiBold,
                         ),
@@ -58,7 +58,7 @@ class OrderDetailsDialog extends StatelessWidget {
                           children: [
                             CustomText.h4(
                               context,
-                              tr(context).id + ':',
+                              '${tr(context).id}:',
                             ),
                             CustomText.h4(
                               context,
@@ -71,7 +71,7 @@ class OrderDetailsDialog extends StatelessWidget {
                           children: [
                             CustomText.h4(
                               context,
-                              tr(context).status + ':',
+                              '${tr(context).status}:',
                             ),
                             CustomText.h4(
                               context,
@@ -84,7 +84,7 @@ class OrderDetailsDialog extends StatelessWidget {
                           children: [
                             CustomText.h4(
                               context,
-                              tr(context).payment + ':',
+                              '${tr(context).payment}:',
                             ),
                             CustomText.h4(
                               context,
@@ -102,7 +102,7 @@ class OrderDetailsDialog extends StatelessWidget {
               ),
               CustomText.h4(
                 context,
-                tr(context).userDetails + ':',
+                '${tr(context).userDetails}:',
                 underline: true,
                 weight: FontStyles.fontWeightSemiBold,
               ),
@@ -120,11 +120,7 @@ class OrderDetailsDialog extends StatelessWidget {
               ),
               CustomText.h4(
                 context,
-                orderModel.addressModel!.state +
-                    ', ' +
-                    orderModel.addressModel!.city +
-                    ', ' +
-                    orderModel.addressModel!.street,
+                '${orderModel.addressModel!.state}, ${orderModel.addressModel!.city}, ${orderModel.addressModel!.street}',
                 padding: LocalizationService.instance.isAr(context)
                     ? EdgeInsets.only(right: Sizes.hPaddingSmall(context))
                     : EdgeInsets.only(left: Sizes.hPaddingSmall(context)),
@@ -141,7 +137,7 @@ class OrderDetailsDialog extends StatelessWidget {
               ),
               CustomText.h4(
                 context,
-                tr(context).note + ':',
+                '${tr(context).note}:',
                 underline: true,
                 weight: FontStyles.fontWeightSemiBold,
               ),

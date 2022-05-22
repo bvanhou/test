@@ -27,7 +27,7 @@ class ConnectivityService {
   //connectivity_plus: check for cellular and wifi connection "Does not guarantee connection to Internet".
   _initConnectivityStream() {
     Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      log("Connection status changed: " + result.toString());
+      log("Connection status changed: $result");
       if (result == ConnectivityResult.none && _isConnected == true) {
         _isConnected = false;
         _navigateToNoInternetScreen();
@@ -42,7 +42,7 @@ class ConnectivityService {
     await Future.delayed(const Duration(seconds: 5));
 
     DataConnectionChecker().onStatusChange.listen((status) {
-      log("Connection status changed : " + status.toString());
+      log("Connection status changed : $status");
       if (status == DataConnectionStatus.disconnected && _isConnected == true) {
         _isConnected = false;
         _navigateToNoInternetScreen();

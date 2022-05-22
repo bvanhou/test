@@ -45,6 +45,23 @@ class CustomOutlinedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        shape: shape ??
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                Sizes.roundedButtonDefaultRadius(context),
+              ),
+            ),
+        side: side,
+        elevation: elevation ?? 0,
+        backgroundColor: buttonColor,
+        primary: splashColor,
+        shadowColor: shadowColor,
+        padding: padding ??
+            EdgeInsets.zero, //Not necessary if you added height and width.
+      ),
+      onPressed: onPressed,
+      onLongPress: onLongPress,
       child: Container(
         height: height ?? Sizes.roundedButtonDefaultHeight(context),
         width: width ?? Sizes.roundedButtonDefaultWidth(context),
@@ -68,23 +85,6 @@ class CustomOutlinedButton extends StatelessWidget {
               alignment: Alignment.center,
             ),
       ),
-      style: OutlinedButton.styleFrom(
-        shape: shape ??
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                Sizes.roundedButtonDefaultRadius(context),
-              ),
-            ),
-        side: side,
-        elevation: elevation ?? 0,
-        backgroundColor: buttonColor,
-        primary: splashColor,
-        shadowColor: shadowColor,
-        padding: padding ??
-            EdgeInsets.zero, //Not necessary if you added height and width.
-      ),
-      onPressed: onPressed,
-      onLongPress: onLongPress,
     );
   }
 }

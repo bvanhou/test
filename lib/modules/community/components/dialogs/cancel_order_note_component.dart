@@ -47,7 +47,7 @@ class CancelOrderNoteComponent extends StatelessWidget {
         maxLines: 6,
         maxLength: 200,
         textInputAction: TextInputAction.newline,
-        hintText: tr(context).typeYourNote + '...',
+        hintText: '${tr(context).typeYourNote}...',
         margin: EdgeInsets.only(bottom: Sizes.vMarginSmallest(context)),
       ),
     ];

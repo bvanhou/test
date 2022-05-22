@@ -1,7 +1,7 @@
 import 'package:deliverzler/core/services/init_services/firebase_messaging_service.dart';
 import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/services/init_services/services_initializer.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/core/viewmodels/main_core_provider.dart';
 

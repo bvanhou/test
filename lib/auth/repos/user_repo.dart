@@ -7,7 +7,7 @@ import 'package:deliverzler/core/errors/exceptions.dart';
 import 'package:deliverzler/core/errors/failures.dart';
 import 'package:deliverzler/core/services/firebase_services/firebase_caller.dart';
 import 'package:deliverzler/core/services/firebase_services/firestore_paths.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final userRepoProvider = Provider<UserRepo>((ref) => UserRepo());
 

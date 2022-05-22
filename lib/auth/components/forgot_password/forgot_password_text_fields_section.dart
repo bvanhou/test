@@ -34,7 +34,7 @@ class ForgotPasswordTextFieldsSection extends StatelessWidget {
               return CupertinoFormSection(
                   decoration: CupertinoCustomTheme
                       .cupertinoFormSectionReactiveDecoration(context,
-                          hasFocus ? borderState.focused : borderState.base),
+                          hasFocus ? BorderState.focused : BorderState.base),
                   backgroundColor: Colors.transparent,
                   margin: EdgeInsets.zero,
                   children: [

@@ -3,7 +3,7 @@ import 'package:deliverzler/auth/repos/user_repo.dart';
 import 'package:deliverzler/core/utils/toasts.dart';
 import 'package:deliverzler/modules/home/viewmodels/delivering_orders_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
