@@ -1,4 +1,4 @@
-import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 import 'package:deliverzler/modules/map/utils/constants.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

@@ -3,14 +3,20 @@ import 'dart:async';
 
 import 'package:deliverzler/core/services/location_service.dart';
 import 'package:deliverzler/core/utils/constants.dart';
-import 'package:deliverzler/modules/home/utils/location_error.dart';
-import 'package:deliverzler/modules/home/viewmodels/location_change_callbacks_viewmodel.dart';
+import 'package:deliverzler/modules/community/models/community_model.dart';
+import 'package:deliverzler/modules/community/repos/community_repo.dart';
+import 'package:deliverzler/modules/community/utils/location_error.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_change_callbacks_viewmodel.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/viewmodels/main_core_provider.dart';
-import 'package:deliverzler/modules/home/viewmodels/location_service_provider/location_service_state.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_service_provider/location_service_state.dart';
 import 'package:geolocator/geolocator.dart';
 
-final locationServiceProvider =
+final mainCommunityStreamProvider = StreamProvider<List<CommunityModel>>((ref) {
+  return ref.watch(communityRepoProvider).getMainCommunityStream();
+});
+
+final communityServiceProvider =
     StateNotifierProvider<LocationServiceNotifier, LocationServiceState>((ref) {
   return LocationServiceNotifier(ref);
 });

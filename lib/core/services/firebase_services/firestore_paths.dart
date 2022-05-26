@@ -1,4 +1,8 @@
 class FirestorePaths {
+  /// Community
+  static String communityCollection() => 'communities';
+  static String communityDocument(String docId) => 'communities/$docId';
+
   /// User
   static String userCollection() => 'users';
 

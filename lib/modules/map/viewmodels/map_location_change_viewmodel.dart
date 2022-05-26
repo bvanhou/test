@@ -1,4 +1,4 @@
-import 'package:deliverzler/modules/home/viewmodels/location_change_callbacks_viewmodel.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_change_callbacks_viewmodel.dart';
 import 'package:deliverzler/modules/map/viewmodels/current_location_providers/current_loc_camera_position_provider.dart';
 import 'package:deliverzler/modules/map/viewmodels/current_location_providers/current_loc_marker_provider/current_loc_marker_provider.dart';
 import 'package:deliverzler/modules/map/viewmodels/map_overlays_providers/map_polylines_provider.dart';

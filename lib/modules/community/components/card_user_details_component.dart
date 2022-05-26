@@ -3,7 +3,7 @@ import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/cached_network_image_circular.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/modules/home/models/order_model.dart';
+import 'package:deliverzler/modules/community/models/order_model.dart';
 import 'package:flutter/material.dart';
 
 class CardUserDetailsComponent extends StatelessWidget {

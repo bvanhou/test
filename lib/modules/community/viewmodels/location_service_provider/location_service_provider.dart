@@ -3,11 +3,11 @@ import 'dart:async';
 
 import 'package:deliverzler/core/services/location_service.dart';
 import 'package:deliverzler/core/utils/constants.dart';
-import 'package:deliverzler/modules/home/utils/location_error.dart';
-import 'package:deliverzler/modules/home/viewmodels/location_change_callbacks_viewmodel.dart';
+import 'package:deliverzler/modules/community/utils/location_error.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_change_callbacks_viewmodel.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/viewmodels/main_core_provider.dart';
-import 'package:deliverzler/modules/home/viewmodels/location_service_provider/location_service_state.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_service_provider/location_service_state.dart';
 import 'package:geolocator/geolocator.dart';
 
 final locationServiceProvider =

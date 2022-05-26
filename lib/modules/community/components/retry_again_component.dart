@@ -4,7 +4,7 @@ import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_button.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/modules/home/viewmodels/location_service_provider/location_service_provider.dart';
+import 'package:deliverzler/modules/community/viewmodels/location_service_provider/location_service_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

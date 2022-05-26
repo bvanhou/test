@@ -1,6 +1,6 @@
 import 'package:deliverzler/core/screens/popup_page_nested.dart';
 import 'package:deliverzler/general/settings/components/logout_component.dart';
-import 'package:deliverzler/general/settings/components/user_edit_component.dart';
+import 'package:deliverzler/general/settings/components/settings_sections_components/app_account_status_component.dart';
 import 'package:deliverzler/general/settings/components/user_info_component.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
@@ -19,16 +19,17 @@ class SettingsScreen extends StatelessWidget {
             horizontal: Sizes.screenHPaddingDefault(context),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               const UserInfoComponent(),
               SizedBox(
-                height: Sizes.vMarginSmall(context),
+                height: Sizes.vMarginHigh(context),
               ),
+              const AppAccountStatusSectionComponent(),
               const AppSettingsSectionComponent(),
               SizedBox(
-                height: Sizes.vMarginMedium(context),
+                height: Sizes.vMarginExtreme(context) * 1.5,
               ),
-              const UserEditComponent(),
               const LogoutComponent(),
             ],
           ),

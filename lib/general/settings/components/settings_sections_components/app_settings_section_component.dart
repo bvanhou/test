@@ -6,7 +6,7 @@ import 'package:deliverzler/core/widgets/custom_tile_component.dart';
 import 'package:deliverzler/general/settings/models/language_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
@@ -41,12 +41,12 @@ class AppSettingsSectionComponent extends ConsumerWidget {
               material: (_, __) {
                 return MaterialSwitchData(
                   activeColor: AppColors.white,
-                  activeTrackColor: AppColors.lightOrange,
+                  activeTrackColor: AppColors.darkThemePrimary,
                 );
               },
               cupertino: (_, __) {
                 return CupertinoSwitchData(
-                  activeColor: AppColors.lightOrange,
+                  activeColor: AppColors.darkThemePrimary,
                 );
               },
             ),
@@ -67,9 +67,32 @@ class AppSettingsSectionComponent extends ConsumerWidget {
             );
           },
         ),
+        // CustomTileComponent(
+        //   title: tr(context).privacy,
+        //   leadingIcon: Icons.privacy_tip,
+        //   customTrailing: OutlinedButton(
+        //     onPressed: null,
+        //     style: ButtonStyle(
+        //       foregroundColor: MaterialStateProperty.all(AppColors.grayWhite),
+        //       backgroundColor:
+        //           MaterialStateProperty.all(AppColors.tertiaryColor),
+        //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+        //           borderRadius: BorderRadius.circular(30.0))),
+        //     ),
+        //     child: const Text("Actions Needed"),
+        //   ),
+        //   onTap: () {
+        //     // NavigationService.push(
+        //     //   context,
+        //     //   isNamed: true,
+        //     //   page: RoutePaths.settingsLanguage,
+        //     // );
+        //   },
+        // ),
+
         CustomTileComponent(
-          title: tr(context).noInternetConnection,
-          leadingIcon: Icons.translate,
+          title: tr(context).help,
+          leadingIcon: Icons.question_mark,
           onTap: () {
             NavigationService.push(
               context,

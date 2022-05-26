@@ -1,6 +1,5 @@
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
-import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
 import 'package:deliverzler/general/settings/viewmodels/settings_viewmodel.dart';
@@ -40,25 +39,19 @@ class _SharedItemComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: Sizes.hMarginHighest(context)),
       padding: EdgeInsets.symmetric(
-        vertical: Sizes.vPaddingSmall(context),
+        vertical: Sizes.vMarginSmallest(context),
       ),
       decoration: BoxDecoration(
         color: AppColors.lightThemePrimary,
         borderRadius: BorderRadius.circular(
-          Sizes.dialogSmallRadius(context),
+          Sizes.roundedButtonDefaultRadius(context),
         ),
         border: Border.all(
           width: 1,
           color: AppColors.lightThemePrimary,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).hintColor.withOpacity(0.15),
-            offset: const Offset(0, 3),
-            blurRadius: 10,
-          ),
-        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +67,6 @@ class _SharedItemComponent extends StatelessWidget {
             context,
             tr(context).logOut,
             alignment: Alignment.center,
-            weight: FontStyles.fontWeightExtraBold,
             color: AppColors.darkThemeNormalTextColor,
           ),
         ],

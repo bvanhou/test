@@ -5,7 +5,6 @@ import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/general/settings/viewmodels/settings_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -15,18 +14,28 @@ class UserEditComponent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final _settingsVM = ref.watch(settingsViewModel);
-
     return PlatformWidget(
       material: (_, __) {
         return InkWell(
-          onTap: _settingsVM.editProfile,
+          onTap: () {
+            NavigationService.push(
+              context,
+              isNamed: true,
+              page: RoutePaths.settingsProfile,
+            );
+          },
           child: const _SharedItemComponent(),
         );
       },
       cupertino: (_, __) {
         return GestureDetector(
-          onTap: _settingsVM.editProfile,
+          onTap: () {
+            NavigationService.push(
+              context,
+              isNamed: true,
+              page: RoutePaths.settingsProfile,
+            );
+          },
           child: const _SharedItemComponent(),
         );
       },
@@ -67,7 +76,7 @@ class _SharedItemComponent extends StatelessWidget {
         children: [
           const Icon(
             Icons.logout,
-            color: AppColors.lightThemePrimary,
+            color: AppColors.grayWhite,
           ),
           SizedBox(
             width: Sizes.hMarginSmall(context),
@@ -77,7 +86,7 @@ class _SharedItemComponent extends StatelessWidget {
             tr(context).profileSettings,
             alignment: Alignment.center,
             weight: FontStyles.fontWeightExtraBold,
-            color: AppColors.lightThemePrimary,
+            color: AppColors.grayWhite,
           ),
         ],
       ),
@@ -89,6 +98,6 @@ navigationToUserProfileScreen(BuildContext context) {
   NavigationService.pushReplacementAll(
     context,
     isNamed: true,
-    page: RoutePaths.settingsProfile,
+    page: RoutePaths.community,
   );
 }

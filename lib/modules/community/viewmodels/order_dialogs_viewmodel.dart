@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:deliverzler/auth/repos/user_repo.dart';
 import 'package:deliverzler/core/utils/toasts.dart';
-import 'package:deliverzler/modules/home/viewmodels/delivering_orders_provider.dart';
+import 'package:deliverzler/modules/community/viewmodels/delivering_orders_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
@@ -9,12 +9,12 @@ import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
 import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/core/widgets/dialog_widget.dart';
-import 'package:deliverzler/modules/home/components/dialogs/cancel_order_dialog.dart';
-import 'package:deliverzler/modules/home/components/dialogs/confirm_choice_dialog.dart';
-import 'package:deliverzler/modules/home/components/dialogs/order_details_dialog.dart';
-import 'package:deliverzler/modules/home/models/order_model.dart';
-import 'package:deliverzler/modules/home/repos/orders_repo.dart';
-import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
+import 'package:deliverzler/modules/community/components/dialogs/cancel_order_dialog.dart';
+import 'package:deliverzler/modules/community/components/dialogs/confirm_choice_dialog.dart';
+import 'package:deliverzler/modules/community/components/dialogs/order_details_dialog.dart';
+import 'package:deliverzler/modules/community/models/order_model.dart';
+import 'package:deliverzler/modules/community/repos/orders_repo.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 // import 'package:freezed_annotation/freezed_annotation.dart';
 
 final orderDialogsViewModel =

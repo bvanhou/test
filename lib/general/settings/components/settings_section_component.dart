@@ -1,3 +1,4 @@
+import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/widgets/custom_tile_component.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
@@ -20,22 +21,8 @@ class SettingsSectionComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-        vertical: Sizes.vMarginMedium(context),
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        borderRadius: BorderRadius.circular(
-          Sizes.dialogSmallRadius(context),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).hintColor.withOpacity(0.15),
-            offset: const Offset(0, 3),
-            blurRadius: 10,
-          ),
-        ],
-      ),
+      margin: const EdgeInsets.symmetric(vertical: 0),
+      color: Colors.transparent,
       child: ListView(
         padding: EdgeInsets.symmetric(vertical: Sizes.vPaddingTiny(context)),
         shrinkWrap: true,
@@ -43,14 +30,16 @@ class SettingsSectionComponent extends StatelessWidget {
         children: <Widget>[
           Material(
             child: ListTile(
+              tileColor: Theme.of(context).scaffoldBackgroundColor,
               horizontalTitleGap: 0,
-              leading: Icon(
-                headerIcon,
-              ),
-              title: CustomText.h4(
+              // leading: Icon(
+              //   headerIcon,
+              // ),
+              title: CustomText.h6(
                 context,
                 headerTitle,
                 maxLines: 1,
+                weight: FontStyles.fontWeightBold,
                 overflow: TextOverflow.ellipsis,
               ),
               trailing: headerTrailing,

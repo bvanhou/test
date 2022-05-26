@@ -1,5 +1,5 @@
 import 'package:deliverzler/auth/repos/user_repo.dart';
-import 'package:deliverzler/modules/profile/viewmodels/profile_provider.dart';
+import 'package:deliverzler/general/settings/viewmodels/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/components/image_pick_component.dart';
 import 'package:deliverzler/core/styles/sizes.dart';

@@ -8,8 +8,8 @@ import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_button.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/modules/home/viewmodels/order_dialogs_viewmodel.dart';
-import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/order_dialogs_viewmodel.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 
 class MapConfirmButtonComponent extends ConsumerWidget {
   const MapConfirmButtonComponent({Key? key}) : super(key: key);

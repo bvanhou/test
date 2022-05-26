@@ -1,8 +1,8 @@
 import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
-import 'package:deliverzler/modules/home/repos/orders_repo.dart';
-import 'package:deliverzler/modules/home/viewmodels/order_dialogs_viewmodel.dart';
+import 'package:deliverzler/modules/community/repos/orders_repo.dart';
+import 'package:deliverzler/modules/community/viewmodels/order_dialogs_viewmodel.dart';
 
 final notificationOrderViewModel = Provider<NotificationOrderViewModel>(
     (ref) => NotificationOrderViewModel(ref));

@@ -5,7 +5,7 @@ import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/core/services/init_services/local_notification_service.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
-import 'package:deliverzler/modules/home/repos/orders_repo.dart';
+import 'package:deliverzler/modules/community/repos/orders_repo.dart';
 import 'package:deliverzler/modules/map/models/delivering_order_model.dart';
 import 'package:deliverzler/modules/map/services/map_service.dart';
 import 'package:deliverzler/modules/map/utils/constants.dart';
@@ -95,7 +95,7 @@ class DeliveringOrdersNotifier
 
   showOrderArrivedNotification(String orderId) {
     final _notificationModel = NotificationModel(
-      route: RoutePaths.home,
+      route: RoutePaths.community,
       data: {'orderId': orderId},
     );
     LocalNotificationService.instance.showInstantNotification(

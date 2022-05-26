@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:deliverzler/modules/home/models/address_model.dart';
+import 'package:deliverzler/modules/community/models/address_model.dart';
 
 class OrderModel {
   final String? orderId;

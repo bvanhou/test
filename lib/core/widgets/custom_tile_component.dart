@@ -1,3 +1,4 @@
+import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
@@ -12,12 +13,14 @@ class CustomTileComponent extends StatelessWidget {
     this.customTrailing,
     this.onTap,
     this.contentPadding,
+    this.isPill,
     Key? key,
   })  : assert((trailingText == null || customTrailing == null) &&
             (leadingIcon == null || customLeading == null)),
         super(key: key);
 
   final String title;
+  final bool? isPill;
   final IconData? leadingIcon;
   final Color? leadingIconColor;
   final Widget? customLeading;
@@ -31,16 +34,30 @@ class CustomTileComponent extends StatelessWidget {
     return Material(
       child: ListTile(
         dense: true,
+        tileColor: Theme.of(context).scaffoldBackgroundColor,
         contentPadding: contentPadding,
         minLeadingWidth: 0.0,
         horizontalTitleGap: Sizes.hMarginSmallest(context),
-        title: CustomText.h5(
-          context,
-          title,
-          color: Theme.of(context).textTheme.headline4!.color,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
+        title: isPill != true
+            ? CustomText.h5(
+                context,
+                title,
+                color: Theme.of(context).textTheme.headline4!.color,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+            : OutlinedButton(
+                onPressed: null,
+                style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all(AppColors.grayWhite),
+                  backgroundColor:
+                      MaterialStateProperty.all(AppColors.accentColor),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0))),
+                ),
+                child: const Text("Approved"),
+              ),
         leading: customLeading ??
             (leadingIcon != null
                 ? Icon(

@@ -1,12 +1,12 @@
 import 'package:deliverzler/core/screens/popup_page_nested.dart';
-import 'package:deliverzler/modules/profile/viewmodels/profile_provider.dart';
+import 'package:deliverzler/general/settings/components/profile_sections_components/profile_form_component.dart';
+import 'package:deliverzler/general/settings/components/profile_sections_components/user_details_component.dart';
+import 'package:deliverzler/general/settings/components/profile_sections_components/user_image_component.dart';
+import 'package:deliverzler/general/settings/viewmodels/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/loading_indicators.dart';
-import 'package:deliverzler/modules/profile/components/profile_form_component.dart';
-import 'package:deliverzler/modules/profile/components/user_details_component.dart';
-import 'package:deliverzler/modules/profile/components/user_image_component.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

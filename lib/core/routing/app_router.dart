@@ -5,8 +5,9 @@ import 'package:deliverzler/auth/screens/verification_screen.dart';
 import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/routing/navigation_transitions.dart';
 import 'package:deliverzler/core/routing/route_paths.dart';
-import 'package:deliverzler/modules/home/screens/home_screen.dart';
-import 'package:deliverzler/modules/home/screens/orders_screen.dart';
+import 'package:deliverzler/general/settings/screens/profile_screen.dart';
+import 'package:deliverzler/modules/community/screens/community_screen.dart';
+import 'package:deliverzler/modules/community/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/auth/screens/login_screen.dart';
 import 'package:deliverzler/core/screens/no_internet_connection_screen.dart';
@@ -14,7 +15,6 @@ import 'package:deliverzler/core/screens/splash_screen.dart';
 import 'package:deliverzler/general/settings/screens/language_screen.dart';
 import 'package:deliverzler/general/settings/screens/settings_screen.dart';
 import 'package:deliverzler/modules/map/screens/map_screen.dart';
-import 'package:deliverzler/modules/profile/screens/profile_screen.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class AppRouter {
@@ -83,17 +83,10 @@ class AppRouter {
           transitionDuration: const Duration(seconds: 1),
         );
 
-      //Home
-      case RoutePaths.home:
+      // Community
+      case RoutePaths.community:
         return NavigationFadeTransition(
-          const HomeScreen(),
-          settings: settings,
-        );
-
-      //Community
-      case RoutePaths.communityMain:
-        return NavigationFadeTransition(
-          const HomeScreen(),
+          const CommunityScreen(),
           settings: settings,
         );
 
@@ -115,18 +108,35 @@ class AppRouter {
   }
 
   ///Nested Navigators
-  static Route<dynamic> generateHomeMainNestedRoute(RouteSettings settings) {
+  // static Route<dynamic> generateHomeMainNestedRoute(RouteSettings settings) {
+  //   switch (settings.name) {
+  //     //Home Page
+  //     case RoutePaths.homeMain:
+  //       return NavigationFadeTransition(
+  //         const OrdersScreen(),
+  //         settings: settings,
+  //       );
+
+  //     default:
+  //       return NavigationFadeTransition(
+  //         const OrdersScreen(),
+  //         settings: settings,
+  //       );
+  //   }
+  // }
+
+  static Route<dynamic> generateCommunityNestedRoute(RouteSettings settings) {
     switch (settings.name) {
-      //Home Page
-      case RoutePaths.homeMain:
+      //Community Page
+      case RoutePaths.communityMain:
         return NavigationFadeTransition(
-          const OrdersScreen(),
+          const MainScreen(),
           settings: settings,
         );
 
       default:
         return NavigationFadeTransition(
-          const OrdersScreen(),
+          const SettingsScreen(),
           settings: settings,
         );
     }

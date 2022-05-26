@@ -93,6 +93,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         AppDialogs.showErrorDialog(context, message: failure.message);
       },
       (isSet) async {
+        log(isSet ? "Updated user" : "Failed to update User");
         // CommunityModel? _community =
         //           await _mainCoreVM.getCommunityDataFromFirebaseByName();
         //       _mainCoreVM.setCurrentCommunity(communityModel: _community!);
@@ -107,7 +108,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
           } else {
             log("User Successfully logged in - Navigating to Home Screen");
             subscribeUserToTopic();
-            navigationToHomeScreen(context);
+            navigationToCommunityScreen(context);
           }
         } else {
           log("User has not yet had their phone verified - Navigating to Verification Screen");
@@ -239,11 +240,11 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
   // Navigation Routes
-  navigationToHomeScreen(BuildContext context) {
+  navigationToCommunityScreen(BuildContext context) {
     NavigationService.pushReplacementAll(
       context,
       isNamed: true,
-      page: RoutePaths.home,
+      page: RoutePaths.community,
     );
   }
 

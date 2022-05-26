@@ -3,7 +3,7 @@ import 'package:deliverzler/core/screens/popup_page.dart';
 import 'package:deliverzler/modules/community/components/bottom_nav_bar_component.dart';
 import 'package:deliverzler/modules/community/utils/community_nav_screen_appbar.dart';
 import 'package:deliverzler/modules/community/utils/community_nav_screens_utils.dart';
-import 'package:deliverzler/modules/community/viewmodels/community_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

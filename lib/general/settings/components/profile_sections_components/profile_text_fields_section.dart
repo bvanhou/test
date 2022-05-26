@@ -1,5 +1,5 @@
 import 'package:deliverzler/core/styles/app_themes/cupertino_custom_theme.dart';
-import 'package:deliverzler/modules/profile/widgets/titled_text_field_item.dart';
+import 'package:deliverzler/general/settings/widgets/titled_text_field_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';

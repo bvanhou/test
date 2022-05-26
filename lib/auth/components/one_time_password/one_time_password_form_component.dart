@@ -59,6 +59,7 @@ class OneTimePasswordFormComponent extends HookConsumerWidget {
                               .verificationWithOneTimePassword(context,
                                   otp: _codeController.text.trim(),
                                   hasForgotPassword: false);
+                          _codeController.dispose();
                         }
                       },
                     );

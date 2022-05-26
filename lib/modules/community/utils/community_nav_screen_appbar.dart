@@ -54,6 +54,15 @@ PlatformAppBar? getCommunityNavScreenAppBar(
           title: tr(context).language,
         ),
       );
+    case RoutePaths.settingsProfile:
+      return CustomAppBar(
+        context,
+        hasBackButton: true,
+        customTitle: AppBarWithIconComponent(
+          icon: AppImages.settingsScreenIcon,
+          title: tr(context).myProfile,
+        ),
+      );
     default:
       return null;
   }

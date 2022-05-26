@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:deliverzler/auth/repos/user_repo.dart';
 import 'package:deliverzler/core/services/firebase_services/firebase_caller.dart';
 import 'package:deliverzler/core/services/firebase_services/firestore_paths.dart';
-import 'package:deliverzler/modules/home/models/order_model.dart';
-import 'package:deliverzler/modules/home/utils/enums.dart';
+import 'package:deliverzler/modules/community/models/order_model.dart';
+import 'package:deliverzler/modules/community/utils/enums.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final ordersRepoProvider = Provider<OrdersRepo>((ref) => OrdersRepo(ref));

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:deliverzler/modules/home/viewmodels/notification_order_viewmodel.dart';
+import 'package:deliverzler/modules/community/viewmodels/notification_order_viewmodel.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:deliverzler/modules/notifications/models/notification_model.dart';

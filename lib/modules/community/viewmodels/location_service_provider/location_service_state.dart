@@ -1,4 +1,4 @@
-import 'package:deliverzler/modules/home/utils/location_error.dart';
+import 'package:deliverzler/modules/community/utils/location_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:geolocator/geolocator.dart';
 

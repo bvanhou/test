@@ -1,4 +1,4 @@
-import 'package:deliverzler/modules/home/viewmodels/delivering_orders_provider.dart';
+import 'package:deliverzler/modules/community/viewmodels/delivering_orders_provider.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

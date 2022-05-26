@@ -12,7 +12,7 @@ class UserModel {
 
   late final bool? banned;
   late final bool? hasApplied;
-  late final bool? phoneVerified;
+  bool? phoneVerified;
 
   final String? drsImage;
 
@@ -108,7 +108,7 @@ class UserModel {
         username: user.displayName?.split(' ').first ?? '',
         phone: _mobile,
         image: user.photoURL ?? '',
-        phoneVerified: false,
+        phoneVerified: user.phoneNumber!.isNotEmpty || false,
         approved: false,
         banned: false,
         hasApplied: false,

@@ -1,12 +1,12 @@
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
-import 'package:deliverzler/modules/home/utils/enums.dart';
+import 'package:deliverzler/modules/community/utils/enums.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/services/date_parser.dart';
 import 'package:deliverzler/core/styles/font_styles.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
-import 'package:deliverzler/modules/home/models/order_model.dart';
+import 'package:deliverzler/modules/community/models/order_model.dart';
 
 class CardOrderDetailsComponent extends StatelessWidget {
   final OrderModel orderModel;

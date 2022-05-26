@@ -2,7 +2,7 @@ import 'package:deliverzler/core/routing/app_router.dart';
 import 'package:deliverzler/core/routing/navigator_route_observer.dart';
 import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/modules/community/screens/nested_navigator_screen.dart';
-import 'package:deliverzler/modules/community/viewmodels/community_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -24,7 +24,7 @@ abstract class CommunityNavScreensUtils {
         NestedNavigatorScreen(
           navigatorKey: communityNavScreensKeys[1],
           screenPath: RoutePaths.communityMain,
-          onGenerateRoute: AppRouter.generateHomeMainNestedRoute,
+          onGenerateRoute: AppRouter.generateCommunityNestedRoute,
           routeObserver: _communityNavScreensRouteObserver(1, ref),
         ),
         NestedNavigatorScreen(

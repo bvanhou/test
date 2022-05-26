@@ -26,15 +26,4 @@ class SettingsViewModel {
 
     await _mainCoreProvider.logoutUser();
   }
-
-  editProfile() async {
-    NavigationService.pushReplacementAll(
-      NavigationService.context,
-      isNamed: true,
-      rootNavigator: true,
-      page: RoutePaths.settingsProfile,
-    );
-    //Delay until NavigationFadeTransition is done
-    await Future.delayed(const Duration(seconds: 1));
-  }
 }

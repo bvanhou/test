@@ -15,25 +15,28 @@ PlatformNavBar? bottomNavBarComponent(
     itemChanged: itemChanged,
     items: [
       BottomNavigationBarItem(
-        icon: FaIcon(
-          FontAwesomeIcons.house,
-          size: Sizes.iconsSizes(context)['s5'],
-        ),
-        label: currentIndex == 0 ? '•' : '',
+        icon: Container(
+            padding: const EdgeInsets.only(top: 25),
+            child: FaIcon(
+              FontAwesomeIcons.house,
+              size: Sizes.iconsSizes(context)['s5'],
+            )),
       ),
       BottomNavigationBarItem(
-        icon: FaIcon(
-          FontAwesomeIcons.compass,
-          size: Sizes.iconsSizes(context)['s5'],
-        ),
-        label: currentIndex == 1 ? '•' : '',
+        icon: Container(
+            padding: const EdgeInsets.only(top: 25),
+            child: FaIcon(
+              FontAwesomeIcons.compass,
+              size: Sizes.iconsSizes(context)['s5'],
+            )),
       ),
       BottomNavigationBarItem(
-        icon: FaIcon(
-          FontAwesomeIcons.userAstronaut,
-          size: Sizes.iconsSizes(context)['s5'],
-        ),
-        label: currentIndex == 2 ? '•' : '',
+        icon: Container(
+            padding: const EdgeInsets.only(top: 25),
+            child: FaIcon(
+              FontAwesomeIcons.userAstronaut,
+              size: Sizes.iconsSizes(context)['s5'],
+            )),
       ),
     ],
     backgroundColor:

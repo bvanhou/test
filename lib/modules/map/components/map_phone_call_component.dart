@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/utils/dialogs.dart';
-import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class MapPhoneCallComponent extends ConsumerWidget {

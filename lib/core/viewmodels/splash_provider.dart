@@ -28,7 +28,7 @@ class SplashProvider {
               isNamed: true,
               page: secondPage,
             );
-            if (secondPage == RoutePaths.home) {
+            if (secondPage == RoutePaths.community) {
               FirebaseMessagingService.instance.getInitialMessage();
             }
           },
@@ -58,7 +58,7 @@ class SplashProvider {
     bool _hasValidAuth = await _mainCoreProvider.checkValidAuth();
 
     if (_hasValidAuth) {
-      secondPage = RoutePaths.home;
+      secondPage = RoutePaths.community;
     } else {
       secondPage = RoutePaths.authLogin;
     }

@@ -1,4 +1,4 @@
-import 'package:deliverzler/modules/home/viewmodels/home_state_providers.dart';
+import 'package:deliverzler/modules/community/viewmodels/community_service_provider/community_state_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/components/main_drawer_bottom_component.dart';
 import 'package:deliverzler/core/components/main_drawer_user_info_component.dart';
@@ -39,7 +39,7 @@ class MainDrawer extends ConsumerWidget {
                   icon: AppImages.profileScreenIcon,
                   onTap: () {
                     scaffoldKey.currentState!.openEndDrawer();
-                    ref.watch(homeNavIndexProvider.notifier).state = 0;
+                    ref.watch(communityNavIndexProvider.notifier).state = 0;
                   },
                 ),
                 DrawerItem(
@@ -47,7 +47,7 @@ class MainDrawer extends ConsumerWidget {
                   icon: AppImages.settingsScreenIcon,
                   onTap: () {
                     scaffoldKey.currentState!.openEndDrawer();
-                    ref.watch(homeNavIndexProvider.notifier).state = 2;
+                    ref.watch(communityNavIndexProvider.notifier).state = 2;
                   },
                 ),
                 SizedBox(

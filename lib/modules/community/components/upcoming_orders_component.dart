@@ -3,8 +3,8 @@ import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
 import 'package:deliverzler/core/widgets/loading_indicators.dart';
-import 'package:deliverzler/modules/home/components/card_item_component.dart';
-import 'package:deliverzler/modules/home/viewmodels/upcoming_orders_provider.dart';
+import 'package:deliverzler/modules/community/components/card_item_component.dart';
+import 'package:deliverzler/modules/community/viewmodels/upcoming_orders_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
