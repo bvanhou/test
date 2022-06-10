@@ -3,7 +3,6 @@ import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/core/widgets/custom_text.dart';
 import 'package:deliverzler/core/widgets/loading_indicators.dart';
-import 'package:deliverzler/modules/community/components/card_item_component.dart';
 import 'package:deliverzler/modules/community/viewmodels/upcoming_orders_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -29,9 +28,7 @@ class UpcomingOrdersComponent extends ConsumerWidget {
                   horizontal: Sizes.screenHPaddingMedium(context),
                 ),
                 itemBuilder: (context, index) {
-                  return CardItemComponent(
-                    orderModel: upcomingOrders[index],
-                  );
+                  return const Text("asfd");
                 },
                 separatorBuilder: (context, index) => SizedBox(
                   height: Sizes.vMarginHigh(context),

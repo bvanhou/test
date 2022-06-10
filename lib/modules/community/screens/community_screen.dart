@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:deliverzler/core/components/main_drawer.dart';
+import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/core/screens/popup_page.dart';
 import 'package:deliverzler/modules/community/components/bottom_nav_bar_component.dart';
 import 'package:deliverzler/modules/community/utils/community_nav_screen_appbar.dart';
@@ -22,6 +25,7 @@ class CommunityScreen extends HookConsumerWidget {
     final _currentRoute = ref.watch(communityNavRoutesProviders[_currentIndex]);
     final _scaffoldKey = useMemoized(() => GlobalKey<ScaffoldState>());
 
+    log(_currentRoute);
     return PopUpPage(
       safeAreaNavBar: true,
       onWillPop: () async {
@@ -53,13 +57,15 @@ class CommunityScreen extends HookConsumerWidget {
       cupertinoTabChildBuilder: (context, index) {
         return CommunityNavScreensUtils.communityNavScreens(ref)[index];
       },
-      bottomNavigationBar: bottomNavBarComponent(
-        context,
-        currentIndex: _currentIndex,
-        itemChanged: (index) {
-          ref.watch(communityNavIndexProvider.notifier).state = index;
-        },
-      ),
+      bottomNavigationBar: _currentRoute != RoutePaths.communityPost
+          ? bottomNavBarComponent(
+              context,
+              currentIndex: _currentIndex,
+              itemChanged: (index) {
+                ref.watch(communityNavIndexProvider.notifier).state = index;
+              },
+            )
+          : null,
     );
   }
 }

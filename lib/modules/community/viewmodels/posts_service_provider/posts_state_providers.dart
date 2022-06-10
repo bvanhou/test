@@ -8,7 +8,6 @@ final communityNavIndexProvider = StateProvider.autoDispose<int>((ref) => 1);
 final communityNavRoutesProviders = [
   StateProvider.autoDispose<String>((ref) => RoutePaths.communityMain),
   StateProvider.autoDispose<String>((ref) => RoutePaths.communityBoard),
-  StateProvider.autoDispose<String>((ref) => RoutePaths.communityPost),
   StateProvider.autoDispose<String>((ref) => RoutePaths.settings),
 ];
 

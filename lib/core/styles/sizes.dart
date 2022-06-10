@@ -27,6 +27,7 @@ class Sizes {
         "h4": 17.0.sp(context),
         "h5": 14.0.sp(context),
         "h6": 12.0.sp(context),
+        "h7": 8.0.sp(context),
       };
 
   //Icons sizes
@@ -38,6 +39,8 @@ class Sizes {
         "s5": 24.r(context),
         "s6": 19.r(context),
         "s7": 14.r(context),
+        "s8": 10.r(context),
+        "s9": 6.r(context),
       };
 
   //Screens Padding
@@ -111,8 +114,12 @@ class Sizes {
 
   //Cards
   static cardVPadding(BuildContext context) => 16.h(context);
+  static cardVPaddingSmall(BuildContext context) => 8.h(context);
+  static cardVPaddingTiny(BuildContext context) => 4.h(context);
+
   static cardHRadius(BuildContext context) => 20.w(context);
   static cardRadius(BuildContext context) => 14.r(context);
+  static cardRadiusSmall(BuildContext context) => 7.r(context);
 
   //Dialogs
   static dialogVPadding(BuildContext context) => 30.h(context);
@@ -136,6 +143,9 @@ class Sizes {
   static userImageMediumRadius(BuildContext context) => 56.r(context);
   static userImageHighRadius(BuildContext context) => 66.r(context);
   static statusCircleRadius(BuildContext context) => 8.r(context);
+  static statusCircleRadiusSmall(BuildContext context) => 4.r(context);
+  static statusCircleRadiusTiny(BuildContext context) => 2.r(context);
+
   static qrImageRadius(BuildContext context) => 100.r(context);
   static pickedImageMaxSize(BuildContext context) => 400.r(context);
 

@@ -1,6 +1,4 @@
 import 'package:deliverzler/core/styles/sizes.dart';
-import 'package:deliverzler/core/viewmodels/app_locale_provider.dart';
-import 'package:deliverzler/core/viewmodels/app_theme_provider.dart';
 import 'package:deliverzler/core/widgets/custom_tile_component.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
@@ -12,8 +10,8 @@ class AppAccountStatusSectionComponent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final _selectedLanguage = ref.watch(appLocaleProvider);
-    final _isDarkThemeMode = ref.watch(appThemeProvider) == ThemeMode.dark;
+    // final _selectedLanguage = ref.watch(appLocaleProvider);
+    // final _isDarkThemeMode = ref.watch(appThemeProvider) == ThemeMode.dark;
 
     return SettingsSectionComponent(
       headerIcon: Icons.settings,

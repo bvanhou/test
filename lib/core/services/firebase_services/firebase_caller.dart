@@ -72,6 +72,26 @@ class FirebaseCaller {
     return await reference.add(data).then((value) => value.id);
   }
 
+  Future<T> addData<T>({
+    required String path,
+    required Map<String, dynamic> data,
+    required T Function(dynamic data) builder,
+    bool merge = false,
+  }) async {
+    try {
+      final reference = _firebaseFirestore.collection(path);
+      await reference.add(data);
+      return builder(true);
+    } catch (e) {
+      log(e.toString());
+      final _failure = ServerFailure(
+        message: Exceptions.errorMessage(e),
+        statusCode: Exceptions.statusCode(e),
+      );
+      return builder(_failure);
+    }
+  }
+
   Future<T> getData<T>({
     required String path,
     required T Function(dynamic data, String? documentId) builder,

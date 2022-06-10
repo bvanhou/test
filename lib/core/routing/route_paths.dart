@@ -12,16 +12,22 @@ class RoutePaths {
 
   //HomeMainNestedRoutes
   static const homeMain = 'community_main';
+
   //ProfileNestedRoutes
   static const profile = 'profile';
   //SettingsNestedRoutes
   static const settings = 'settings';
   static const settingsLanguage = '$settings/language';
   static const settingsProfile = '$settings/profile';
+
   //CommunityNestedRoutes
-  static const communityMain = 'community_main';
-  static const communityBoard = '/community/main/board';
-  static const community = '/community';
+  static const community = 'community';
+  static const communityMain = '$community/main';
+  static const communityBoard = '$community/board';
+  static const communityProfile = '$community/profile';
+  static const communityView = '$community/view';
+  static const communityPost = '$community/post';
+
   static const map = '$community/map';
 
   static const membership = '/membership';

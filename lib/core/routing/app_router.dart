@@ -6,7 +6,9 @@ import 'package:deliverzler/core/routing/navigation_service.dart';
 import 'package:deliverzler/core/routing/navigation_transitions.dart';
 import 'package:deliverzler/core/routing/route_paths.dart';
 import 'package:deliverzler/general/settings/screens/profile_screen.dart';
+import 'package:deliverzler/modules/community/screens/community_board_screen.dart';
 import 'package:deliverzler/modules/community/screens/community_screen.dart';
+import 'package:deliverzler/modules/community/screens/community_post_screen.dart';
 import 'package:deliverzler/modules/community/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:deliverzler/auth/screens/login_screen.dart';
@@ -127,13 +129,21 @@ class AppRouter {
 
   static Route<dynamic> generateCommunityNestedRoute(RouteSettings settings) {
     switch (settings.name) {
-      //Community Page
       case RoutePaths.communityMain:
         return NavigationFadeTransition(
           const MainScreen(),
           settings: settings,
         );
-
+      case RoutePaths.communityBoard:
+        return NavigationFadeTransition(
+          const CommunityBoardScreen(),
+          settings: settings,
+        );
+      case RoutePaths.communityPost:
+        return NavigationFadeTransition(
+          const CommunityPostScreen(),
+          settings: settings,
+        );
       default:
         return NavigationFadeTransition(
           const SettingsScreen(),

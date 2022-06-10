@@ -1,7 +1,7 @@
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:flutter/material.dart';
 
-enum BorderState { valid, focused, error, base }
+enum BorderState { valid, focused, error, base, none }
 
 class CupertinoCustomTheme {
   static BoxDecoration cupertinoFormSectionDecoration(BuildContext context) =>
@@ -69,6 +69,16 @@ class CupertinoCustomTheme {
                   .borderSide
                   .color,
             ));
+        break;
+      case BorderState.none:
+        decoration = BoxDecoration(
+          color: Theme.of(context).inputDecorationTheme.fillColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              Sizes.textFieldDefaultRadius(context),
+            ),
+          ),
+        );
         break;
       default:
         decoration = BoxDecoration(

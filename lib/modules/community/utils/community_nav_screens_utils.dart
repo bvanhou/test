@@ -11,27 +11,40 @@ abstract class CommunityNavScreensUtils {
     GlobalKey<NavigatorState>(debugLabel: 'page1'),
     GlobalKey<NavigatorState>(debugLabel: 'page2'),
     GlobalKey<NavigatorState>(debugLabel: 'page3'),
+    GlobalKey<NavigatorState>(debugLabel: 'page4'),
   ];
 
   static communityNavScreens(WidgetRef ref) => [
         //Nested Navigator for persistent bottom navigation bar
+        // NestedNavigatorScreen(
+        //   navigatorKey: communityNavScreensKeys[0],
+        //   screenPath: RoutePaths.profile,
+        //   onGenerateRoute: AppRouter.generateProfileNestedRoute,
+        //   routeObserver: _communityNavScreensRouteObserver(0, ref),
+        // ),
         NestedNavigatorScreen(
           navigatorKey: communityNavScreensKeys[0],
-          screenPath: RoutePaths.profile,
-          onGenerateRoute: AppRouter.generateProfileNestedRoute,
+          screenPath: RoutePaths.communityMain,
+          onGenerateRoute: AppRouter.generateCommunityNestedRoute,
           routeObserver: _communityNavScreensRouteObserver(0, ref),
         ),
         NestedNavigatorScreen(
           navigatorKey: communityNavScreensKeys[1],
-          screenPath: RoutePaths.communityMain,
+          screenPath: RoutePaths.communityBoard,
           onGenerateRoute: AppRouter.generateCommunityNestedRoute,
           routeObserver: _communityNavScreensRouteObserver(1, ref),
         ),
         NestedNavigatorScreen(
           navigatorKey: communityNavScreensKeys[2],
+          screenPath: RoutePaths.communityPost,
+          onGenerateRoute: AppRouter.generateCommunityNestedRoute,
+          routeObserver: _communityNavScreensRouteObserver(2, ref),
+        ),
+        NestedNavigatorScreen(
+          navigatorKey: communityNavScreensKeys[3],
           screenPath: RoutePaths.settings,
           onGenerateRoute: AppRouter.generateSettingsNestedRoute,
-          routeObserver: _communityNavScreensRouteObserver(2, ref),
+          routeObserver: _communityNavScreensRouteObserver(3, ref),
         ),
       ];
 
@@ -40,7 +53,8 @@ abstract class CommunityNavScreensUtils {
         onPush: (Route? route, Route? previousRoute) {
           final _navNotifier =
               ref.read(communityNavRoutesProviders[index].notifier);
-          _navNotifier.state = route!.settings.name!;
+          debugPrint(route!.settings.name);
+          _navNotifier.state = route.settings.name!;
         },
         onReplace: (Route? route, Route? previousRoute) {
           final _navNotifier =

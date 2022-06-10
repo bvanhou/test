@@ -6,13 +6,13 @@ import 'package:deliverzler/core/widgets/custom_tile_component.dart';
 import 'package:deliverzler/general/settings/models/language_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:deliverzler/core/services/localization_service.dart';
 import 'package:deliverzler/core/styles/app_colors.dart';
 import 'package:deliverzler/core/styles/sizes.dart';
 import 'package:deliverzler/general/settings/components/settings_section_component.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AppSettingsSectionComponent extends ConsumerWidget {
+class AppSettingsSectionComponent extends HookConsumerWidget {
   const AppSettingsSectionComponent({Key? key}) : super(key: key);
 
   @override

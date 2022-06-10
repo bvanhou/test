@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^4.0.4
+  dropdown_button2: ^1.5.2
   equatable: ^2.0.3
   firebase_auth: ^3.3.18
   firebase_core: ^1.12.0
@@ -26,6 +27,7 @@ dependencies:
   flutter_fadein: ^2.0.0
   flutter_gen_runner: ^4.1.6
   flutter_hooks: ^0.18.2+1
+  flutter_keyboard_visibility: ^5.2.0
   flutter_local_notifications: ^9.3.1
   flutter_localizations:
     sdk: flutter
@@ -44,6 +46,8 @@ dependencies:
   intl: ^0.17.0
   intl_phone_field: ^3.1.0
   intl_phone_number_input: ^0.7.0+2
+  keyboard_attachable: ^2.1.0
+  keyboard_visibility: ^0.5.6
   location: ^4.3.0
   lottie: ^1.2.1
   material_floating_search_bar: ^0.3.6

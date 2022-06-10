@@ -35,6 +35,28 @@ class CommunityRepo {
     );
   }
 
+  Stream<List<CommunityModel>> getCommunityListStream() {
+    return _firebaseCaller.collectionStream<CommunityModel>(
+      path: FirestorePaths.communityCollection(),
+      // queryBuilder: (query) =>
+      //     query.where('name', isNotEqualTo: 'beyondthemoon'),
+      builder: (snapshotData, snapshotId) {
+        return CommunityModel.fromMap(snapshotData!, snapshotId);
+      },
+    );
+  }
+
+  Stream<List<CommunityModel>> getCommunityStream(
+      {required String communityId}) {
+    return _firebaseCaller.collectionStream<CommunityModel>(
+      path: FirestorePaths.communityCollection(),
+      queryBuilder: (query) => query.where('id', isEqualTo: communityId),
+      builder: (snapshotData, snapshotId) {
+        return CommunityModel.fromMap(snapshotData!, snapshotId);
+      },
+    );
+  }
+
 //  Community CRUD functions
   //  POST - Community
   Future<Either<Failure, bool>> setCommunityData(

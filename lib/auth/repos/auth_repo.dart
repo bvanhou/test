@@ -123,7 +123,7 @@ class AuthRepo {
           .updatePhoneNumber(credential)
           .catchError(
               // ignore: return_of_invalid_type_from_catch_error
-              (onError) => {print(onError.toString())});
+              (onError) => {debugPrint(onError.toString())});
       return Right(_result);
     } on FirebaseAuthException catch (e) {
       final _errorMessage = Exceptions.firebaseAuthErrorMessage(e);

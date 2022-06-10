@@ -21,6 +21,9 @@ class MainItemComponent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     // final mainCoreVM = ref.watch(mainCoreViewModel.notifier);
+    // final _postRepo = ref.read(postRepoProvider);
+    // final _userRepo = ref.read(userRepoProvider);
+
     final num avg = communityModel.shares! / communityModel.members!;
     NumberFormat numberFormat = NumberFormat.decimalPattern('hi');
 
@@ -157,6 +160,15 @@ class MainItemComponent extends ConsumerWidget {
               buttonColor: AppColors.darkThemePrimary,
               width: Sizes.roundedButtonHighWidth(context),
               onPressed: () async {
+                // PostModel postModel = PostModel(
+                //     communityId: communityModel.uId,
+                //     author: _userRepo.userModel!,
+                //     created: DateTime.now(),
+                //     body: 'This is just a test account.',
+                //     title: 'Hello World');
+
+                // await _postRepo.addPostData(postModel);
+
                 // DiscordModel? discord = await _mainVM.generateDiscordInvite();
                 // if (discord != null) {
                 //   debugPrint("discord invite: ${discord.invite}");

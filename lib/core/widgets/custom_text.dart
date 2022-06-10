@@ -265,4 +265,33 @@ class CustomText extends Container {
           textAlign: textAlign,
           alignment: alignment,
         );
+
+  CustomText.h7(
+    BuildContext context,
+    String text, {
+    Key? key,
+    Color? color,
+    FontWeight? weight,
+    TextAlign? textAlign,
+    dynamic overflow,
+    EdgeInsetsGeometry? margin,
+    EdgeInsetsGeometry? padding,
+    double? height,
+    int? maxLines,
+    Alignment? alignment,
+  }) : this(
+          context,
+          text,
+          key: key,
+          maxLines: maxLines,
+          size: Sizes.fontSizes(context)['h7'],
+          padding: padding,
+          margin: margin,
+          height: height,
+          overflow: overflow,
+          color: color ?? Theme.of(context).textTheme.headline6?.color,
+          weight: weight,
+          textAlign: textAlign,
+          alignment: alignment,
+        );
 }

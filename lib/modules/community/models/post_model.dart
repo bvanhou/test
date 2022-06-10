@@ -1,37 +1,39 @@
-class PollModel {
+import 'package:deliverzler/auth/models/user_model.dart';
+
+class PostModel {
   final String? uId;
   final String title;
-  final String description;
+  final String body;
   final String communityId;
-  final String author;
-  final List<String> votesFor;
-  final List<String> votesAgainst;
-  final int voteCount;
+  final UserModel author;
+  final List<String>? votesFor;
+  final List<String>? votesAgainst;
+  final int? voteCount;
   final DateTime created;
-  final DateTime edited;
-  final DateTime voted;
+  final DateTime? edited;
+  final DateTime? voted;
 
-  PollModel({
+  PostModel({
     this.uId,
     required this.title,
-    required this.description,
+    required this.body,
     required this.communityId,
     required this.author,
-    required this.votesFor,
-    required this.votesAgainst,
-    required this.voteCount,
+    this.votesFor,
+    this.votesAgainst,
+    this.voteCount,
     required this.created,
-    required this.edited,
-    required this.voted,
+    this.edited,
+    this.voted,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'uId': uId,
       'title': title,
-      'description': description,
+      'body': body,
       'communityId': communityId,
-      'author': author,
+      'author': author.toMap(),
       'votesFor': votesFor,
       'votesAgainst': votesAgainst,
       'voteCount': voteCount,
@@ -41,13 +43,13 @@ class PollModel {
     }..removeWhere((key, value) => value == null);
   }
 
-  factory PollModel.fromMap(Map<String, dynamic> map, String documentId) {
-    return PollModel(
+  factory PostModel.fromMap(Map<String, dynamic> map, String documentId) {
+    return PostModel(
       uId: documentId,
       title: map['title'] ?? '',
-      description: map['description'] ?? '',
+      body: map['body'] ?? '',
       communityId: map['communityId'] ?? '',
-      author: map['author'] ?? '',
+      author: map['author'],
       votesFor: map['votesFor'] ?? [],
       votesAgainst: map['votesAgainst'] ?? [],
       voteCount: map['voteCount'] ?? 0,
@@ -57,12 +59,12 @@ class PollModel {
     );
   }
 
-  PollModel copyWith({
+  PostModel copyWith({
     String? uId,
     String? title,
-    String? description,
+    String? body,
     String? communityId,
-    String? author,
+    UserModel? author,
     List<String>? votesFor,
     List<String>? votesAgainst,
     int? voteCount,
@@ -70,10 +72,10 @@ class PollModel {
     DateTime? edited,
     DateTime? voted,
   }) {
-    return PollModel(
+    return PostModel(
         uId: uId ?? this.uId,
         title: title ?? this.title,
-        description: description ?? this.description,
+        body: body ?? this.body,
         communityId: communityId ?? this.communityId,
         author: author ?? this.author,
         votesFor: votesFor ?? this.votesFor,

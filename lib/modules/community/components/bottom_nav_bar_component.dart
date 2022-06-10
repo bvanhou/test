@@ -34,7 +34,23 @@ PlatformNavBar? bottomNavBarComponent(
         icon: Container(
             padding: const EdgeInsets.only(top: 25),
             child: FaIcon(
+              FontAwesomeIcons.plus,
+              size: Sizes.iconsSizes(context)['s5'],
+            )),
+      ),
+      BottomNavigationBarItem(
+        icon: Container(
+            padding: const EdgeInsets.only(top: 25),
+            child: FaIcon(
               FontAwesomeIcons.userAstronaut,
+              size: Sizes.iconsSizes(context)['s5'],
+            )),
+      ),
+      BottomNavigationBarItem(
+        icon: Container(
+            padding: const EdgeInsets.only(top: 25),
+            child: FaIcon(
+              FontAwesomeIcons.solidBell,
               size: Sizes.iconsSizes(context)['s5'],
             )),
       ),
